@@ -1,0 +1,36 @@
+#back-to-top{
+	display: none;
+    font-size: 2em;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0;
+		box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.game .screenshots{
+	margin-top: 5px;
+	width: 100%;
+	overflow: hidden;
+	height: 30px;
+}
+.game .screenshots div{
+	height: 30px;
+	display: inline-block;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.game .screenshots img{
+	height: 100%;
+}
+
+@media screen and (max-width: 930px) {
+	#back-to-top{
+	    top: 20px;
+	    bottom: auto;
+	}
+}
+
+.blueimp-gallery>.slides>.slide>.slide-content{
+	padding: 5px;
+}

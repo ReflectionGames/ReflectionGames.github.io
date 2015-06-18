@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Reflection Games</title>
+
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/superhero/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Reflection Games</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+				</ul>
+				<form class="navbar-form navbar-right" role="search" action="games/search.html">
+					<div class="form-group">
+						<input type="text" name="search" class="form-control" placeholder="Search Games">
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+		<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation" style="display: none;"></iframe>
+		<div id="404" style="display: none;">Cant find that game, sorry :(</div>
+
+		<script type="text/javascript">
+
+		function parseSearch(url){
+			var queries = url.replace(/^\?/, '').split('&');
+			var searchObject = {};
+		    for( i = 0; i < queries.length; i++ ) {
+		        split = queries[i].split('=');
+		        searchObject[split[0]] = split[1];
+		    }
+		    return searchObject;
+		}
+
+		function loadGame(data){
+			$('#game').attr({
+				src: data.iframeURL
+			}).css({
+				width: parseInt(data.size.width),
+				height: parseInt(data.size.height)
+			})
+			$('#game').show();
+		}
+
+		var id = parseSearch(location.search).game;
+		if(id){
+			$.ajax({
+				url: '/data/games.json',
+				type: 'get',
+				dataType: 'json'
+			})
+			.done(function(json) {
+				for (var i = 0; i < json.length; i++) {
+					if(json[i].id === id){
+						loadGame(json[i]);
+						return;
+					}
+				};
+				$('#404').show();
+			})
+		}
+		else{
+			$('#404').show();
+		}
+
+		</script>
+	</body>
+</html>
