@@ -1,4 +1,17 @@
-iframe{
+html,body{
+	height: 100%;
+	overflow: hidden;
+}
+#game{
 	border: transparent;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: none;
+    margin: auto;
+}
+#404{
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
 }

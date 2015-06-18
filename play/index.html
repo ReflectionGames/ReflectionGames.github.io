@@ -40,8 +40,21 @@
 			</div><!-- /.navbar-collapse -->
 		</nav>
 
-		<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation" style="display: none;"></iframe>
-		<div id="404" style="display: none;">Cant find that game, sorry :(</div>
+		<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+
+		<div id="404" class="col-lg-4">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Error 404</h4>
+				</div>
+				<div class="panel-body">
+					Cant Seem to find that game, it might have been removed.
+				</div>
+				<div class="panel-footer">
+					<a href="/games/" class="btn btn-primary btn-sm">Back to Games</a>
+				</div>
+			</div>
+		</div>
 
 		<script type="text/javascript">
 
@@ -59,10 +72,10 @@
 			$('#game').attr({
 				src: data.iframeURL
 			}).css({
-				width: parseInt(data.size.width),
-				height: parseInt(data.size.height)
+				'max-width': parseInt(data.size.width),
+				'max-height': parseInt(data.size.height)
 			})
-			$('#game').show();
+			$('#game').css('display','block');
 		}
 
 		var id = parseSearch(location.search).game;
@@ -76,6 +89,7 @@
 				for (var i = 0; i < json.length; i++) {
 					if(json[i].id === id){
 						loadGame(json[i]);
+						$('#404').hide();
 						return;
 					}
 				};
