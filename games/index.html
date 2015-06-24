@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/superhero/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/searchGames.css">
 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
@@ -15,10 +16,32 @@
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://rawgit.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js"></script>
 
-		<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
 	
-		<script src="index.js"></script>
+		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings.min.js"></script>
+
+		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+		<script src="/js/utils.js"></script>
+		<script src="/js/searchGames.js"></script>
+
+		<style type="text/css">
+			.game .screenshots{
+				margin-top: 5px;
+				width: 100%;
+				overflow: hidden;
+				height: 30px;
+			}
+			.game .screenshots div{
+				height: 30px;
+				display: inline-block;
+				margin-right: 5px;
+				cursor: pointer;
+			}
+			.game .screenshots img{
+				height: 100%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -32,11 +55,11 @@
 								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li class="active"><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
 							</ul>
-							<form class="navbar-form navbar-right" role="search" action="games/search.html">
+							<form class="navbar-form navbar-right" role="search" action="/games/search.html">
 								<div class="form-group">
-									<input type="text" name="search" class="form-control" placeholder="Search Games">
+									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
 								</div>
-								<button type="submit" class="btn btn-default">Search</button>
+								<button class="btn btn-default" type="submit">Search</button>
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
@@ -60,6 +83,7 @@
 						<p>
 							<a class="btn btn-primary source-link" href="" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
 							<a class="btn btn-success pull-right play-link" href=""><i class="fa fa-gamepad"></i> Play</a>
+							<a class="btn btn-info pull-right view-link" href="">View</a>
 						</p>
 					</div>
 				</div>
@@ -106,4 +130,50 @@
 		    </div>
 		</div>
 	</body>
+
+	<script type="text/javascript">
+
+	//game
+	$gameTemp = $('#temp .game');
+	$gameTemp.remove();
+	$gameImage = $('#temp .game-image');
+	$gameImage.remove();
+	
+	$('#back-to-top').click(function(){
+		$.smoothScroll({offset: 0});
+	})
+
+	$.ajax({
+		url: '/data/games.json',
+		type: 'get'
+	})
+	.done(function(json) {
+		//build game list
+		for (var i = 0; i < json.length; i++) {
+			var game = json[i];
+			if(!game.visible) continue;
+			
+			var $game = $gameTemp.clone(true,true);
+			$game.find('.title').text(game.title);
+			$game.find('.desc').text(game.description);
+			$game.find('.source-link').attr('href',game.sourceURL);
+			$game.find('.play-link').attr('href','/play/?game='+game.id);
+			$game.find('.view-link').attr('href','/game/?game='+game.id);
+
+			$game.find('.cover').attr('href',game.screenShots[0]);
+			$game.find('.cover>img').attr('src',game.screenShots[0]);
+			$game.appendTo('#games');
+
+			for (var k = 1; k < game.screenShots.length; k++) {
+				var url = game.screenShots[k];
+				var $image = $gameImage.clone(true);
+				$image.find('a').attr('href',url)
+				$image.find('img').attr('src',url)
+				//add it
+				$game.find('.screenShots').append($image);
+			};
+		};
+	})
+
+	</script>
 </html>

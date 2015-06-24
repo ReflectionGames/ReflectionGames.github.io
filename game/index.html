@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<title>Reflection Games</title>
+		<title>{game.title}</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -35,7 +35,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
 							</ul>
 							<form class="navbar-form navbar-right" role="search" action="/games/search.html">
@@ -49,42 +49,21 @@
 				</div>
 			</div>
 		</div>
-		
-		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
-
-		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-		    <!-- The container for the modal slides -->
-		    <div class="slides"></div>
-		    <!-- Controls for the borderless lightbox -->
-		    <h3 class="title"></h3>
-		    <a class="prev">‹</a>
-		    <a class="next">›</a>
-		    <a class="close">×</a>
-		    <a class="play-pause"></a>
-		    <ol class="indicator"></ol>
-		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-		    <div class="modal fade">
-		        <div class="modal-dialog">
-		            <div class="modal-content">
-		                <div class="modal-header">
-		                    <button type="button" class="close" aria-hidden="true"><i class="fa fa-times"></i></button>
-		                    <h4 class="modal-title"></h4>
-		                </div>
-		                <div class="modal-body next"></div>
-		                <div class="modal-footer">
-		                    <button type="button" class="btn btn-default pull-left prev">
-		                        <i class="fa fa-chevron-left"></i>
-		                        Previous
-		                    </button>
-		                    <button type="button" class="btn btn-primary next">
-		                        Next
-		                        <i class="fa fa-chevron-right"></i>
-		                    </button>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
 	</body>
+
+	<script type="text/javascript">
+
+	page = {
+		search: utils.parseSearch(),
+		game: undefined
+	}
+
+	bindings.createModal(page);
+	bindings.applyBindings(page,document);
+
+	utils.loadGame(page.search.game,function(game){
+		page.game = game;
+	})
+
+	</script>
 </html>

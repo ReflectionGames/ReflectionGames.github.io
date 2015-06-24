@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<title>Reflection Games</title>
+		<title>Reflection Games - 404</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -27,17 +27,10 @@
 		<script src="/js/searchGames.js"></script>
 
 		<style type="text/css">
-			html,body{
-				height: 100%;
-				overflow: hidden;
-			}
-			#game{
-				border: transparent;
-			    overflow: hidden;
-			    width: 100%;
-			    height: 100%;
-			    display: none;
-			    margin: auto;
+			#error-404{
+			    margin-left: auto;
+			    margin-right: auto;
+			    float: none;
 			}
 		</style>
 	</head>
@@ -68,36 +61,22 @@
 				</form>
 			</div><!-- /.navbar-collapse -->
 		</nav>
+		<div id="error-404" class="col-lg-4">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Error 404</h4>
+				</div>
+				<div id="message" class="panel-body">{message}</div>
+				<div class="panel-footer">
+					<a id="back" href="#" class="btn btn-primary btn-sm" bind-href="back || '/'">Back</a>
+				</div>
+			</div>
+		</div>
 
-		<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+		<script>
+			page = utils.parseSearch();
+			bindings.createModal(page);
+			bindings.applyBindings(page);
+		</script>
 	</body>
-
-	<script type="text/javascript">
-
-	function loadGame(data){
-		$('#game').attr({
-			src: data.iframeURL
-		}).css({
-			'max-width': parseInt(data.size.width),
-			'max-height': parseInt(data.size.height)
-		})
-		$('#game').css('display','block');
-	}
-
-	var id = utils.parseSearch(location.search).game;
-	if(id){
-		utils.loadGame(id,function(game){
-			if(game){
-				loadGame(game);
-			}
-			else{
-				utils.serverError('404','Cant Seem to find that game, it might have been removed.','/games')
-			}
-		});
-	}
-	else{
-		utils.serverError('404','Cant Seem to find that game, it might have been removed.','/games')
-	}
-
-	</script>
 </html>

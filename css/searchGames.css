@@ -1,0 +1,51 @@
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 100%;
+  border: 1px solid darkgrey;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.tt-suggestion {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #4e5d6c;
+  border: 1px solid transparent;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.tt-suggestion:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.tt-suggestion:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tt-suggestion{
+  color: #ebebeb;
+}
+.tt-suggestion:hover,
+.tt-suggestion:focus,
+.tt-suggestion.tt-cursor{
+  text-decoration: none;
+  color: #ebebeb;
+  background-color: #485563;
+}

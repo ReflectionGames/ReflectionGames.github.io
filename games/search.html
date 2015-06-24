@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<title>Reflection Games</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,16 @@
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
+
+		<style type="text/css">
+		.game img{
+			display: inline-block;
+			width: 100%;
+		}
+		.game h2{
+			margin: 0px;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -35,56 +45,77 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
 							</ul>
 							<form class="navbar-form navbar-right" role="search" action="/games/search.html">
 								<div class="form-group">
-									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
+									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" bind-value="search">
 								</div>
-								<button class="btn btn-default" type="submit">Search</button>
+								<button class="btn btn-default">Search</button>
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
+
+					<div id="games" bind-foreach="searchGames">
+						<div class="game panel panel-default">
+						  	<div class="panel-body">
+						  		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+							  		<a bind-href="'/game?game='+id"><img bind-src="screenShots[0]"></a>
+						  		</div>
+						  		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+							  		<h2>{title}</h2>
+							  		<p>{description}</p>
+
+							  		<a type="button" href="#" class="btn btn-success pull-right" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+						  			<a type="button" href="#" class="btn btn-info pull-right" bind-href="'/game?game='+id">View</a>
+						  	
+						  		</div>
+						  	</div>
+						</div>
+					</div>
+
+					<center bind-visible="searchGames.length == 0"><h2>Cant find anything matching: <span bind-text="search"></span></h2></center>
 				</div>
 			</div>
 		</div>
-		
-		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
 
-		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
-		    <!-- The container for the modal slides -->
-		    <div class="slides"></div>
-		    <!-- Controls for the borderless lightbox -->
-		    <h3 class="title"></h3>
-		    <a class="prev">‹</a>
-		    <a class="next">›</a>
-		    <a class="close">×</a>
-		    <a class="play-pause"></a>
-		    <ol class="indicator"></ol>
-		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-		    <div class="modal fade">
-		        <div class="modal-dialog">
-		            <div class="modal-content">
-		                <div class="modal-header">
-		                    <button type="button" class="close" aria-hidden="true"><i class="fa fa-times"></i></button>
-		                    <h4 class="modal-title"></h4>
-		                </div>
-		                <div class="modal-body next"></div>
-		                <div class="modal-footer">
-		                    <button type="button" class="btn btn-default pull-left prev">
-		                        <i class="fa fa-chevron-left"></i>
-		                        Previous
-		                    </button>
-		                    <button type="button" class="btn btn-primary next">
-		                        Next
-		                        <i class="fa fa-chevron-right"></i>
-		                    </button>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
+		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
 	</body>
+
+	<script type="text/javascript">
+
+	page = {
+		games: [],
+		searchGames: [],
+		searchFunc: undefined,
+		search: ''
+	};
+
+	bindings.createModal(page)
+	bindings.applyBindings(page,document);
+
+	utils.loadGames(function(games){
+		page.games = games;
+		page.searchFunc = searchGames(games);
+
+		page.search = utils.parseSearch().search || '';
+		page.searchFunc(page.search,function(results){
+			for (var i = 0; i < games.length; i++) {
+				var game;
+				for (var k = 0; k < results.length; k++) {
+					if(games[i].title == results[k]){
+						game = games[i];
+						break;
+					}
+				};
+
+				if(game){
+					page.searchGames.push(game);
+				}
+			};
+		});
+	})
+
+	</script>
 </html>

@@ -1,6 +1,7 @@
 [
 	{
 		"id": "grid-movement-test",
+		"visible": true,
 		"title": "grid movement test",
 		"description": "simple test game,",
 		"sourceURL": "https://github.com/ReflectionGames/grid-movement-test",
