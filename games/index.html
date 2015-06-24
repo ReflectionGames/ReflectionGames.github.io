@@ -26,20 +26,8 @@
 		<script src="/js/searchGames.js"></script>
 
 		<style type="text/css">
-			.game .screenshots{
-				margin-top: 5px;
+			.game .coverImage{
 				width: 100%;
-				overflow: hidden;
-				height: 30px;
-			}
-			.game .screenshots div{
-				height: 30px;
-				display: inline-block;
-				margin-right: 5px;
-				cursor: pointer;
-			}
-			.game .screenshots img{
-				height: 100%;
 			}
 		</style>
 	</head>
@@ -63,7 +51,27 @@
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
-					<div id="games">
+					<div id="games" class="row" bind-foreach="games">
+
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<div class="game panel panel-default">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-4">
+											<a bind-href="'/game?game='+id"><img class="coverImage" bind-src="coverImage"></a>
+										</div>
+										<div class="col-xs-8">
+											<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
+											<p class="desc">{description}</p>
+											<p>
+												<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+												<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						
 					</div>
 				</div>
@@ -80,11 +88,11 @@
 					<div class="caption">
 						<h3 class="title" style="margin-top: 0px; display: inline-block;">cannontest</h3>
 						<p class="desc">A Three.js and Cannon.js Test Project</p>
-						<p>
+						<div>
 							<a class="btn btn-primary source-link" href="" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
 							<a class="btn btn-success pull-right play-link" href=""><i class="fa fa-gamepad"></i> Play</a>
 							<a class="btn btn-info pull-right view-link" href="">View</a>
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -143,37 +151,48 @@
 		$.smoothScroll({offset: 0});
 	})
 
-	$.ajax({
-		url: '/data/games.json',
-		type: 'get'
+	page = {
+		games: []
+	}
+
+	bindings.createModal(page);
+	bindings.applyBindings(page,document);
+
+	utils.loadGames(function(games){
+		page.games = games;
 	})
-	.done(function(json) {
-		//build game list
-		for (var i = 0; i < json.length; i++) {
-			var game = json[i];
-			if(!game.visible) continue;
+
+	// $.ajax({
+	// 	url: '/data/games.json',
+	// 	type: 'get'
+	// })
+	// .done(function(json) {
+	// 	//build game list
+	// 	for (var i = 0; i < json.length; i++) {
+	// 		var game = json[i];
+	// 		if(!game.visible) continue;
 			
-			var $game = $gameTemp.clone(true,true);
-			$game.find('.title').text(game.title);
-			$game.find('.desc').text(game.description);
-			$game.find('.source-link').attr('href',game.sourceURL);
-			$game.find('.play-link').attr('href','/play/?game='+game.id);
-			$game.find('.view-link').attr('href','/game/?game='+game.id);
+	// 		var $game = $gameTemp.clone(true,true);
+	// 		$game.find('.title').text(game.title);
+	// 		$game.find('.desc').text(game.description);
+	// 		$game.find('.source-link').attr('href',game.sourceURL);
+	// 		$game.find('.play-link').attr('href','/play/?game='+game.id);
+	// 		$game.find('.view-link').attr('href','/game/?game='+game.id);
 
-			$game.find('.cover').attr('href',game.screenShots[0]);
-			$game.find('.cover>img').attr('src',game.screenShots[0]);
-			$game.appendTo('#games');
+	// 		$game.find('.cover').attr('href',game.screenShots[0]);
+	// 		$game.find('.cover>img').attr('src',game.screenShots[0]);
+	// 		$game.appendTo('#games');
 
-			for (var k = 1; k < game.screenShots.length; k++) {
-				var url = game.screenShots[k];
-				var $image = $gameImage.clone(true);
-				$image.find('a').attr('href',url)
-				$image.find('img').attr('src',url)
-				//add it
-				$game.find('.screenShots').append($image);
-			};
-		};
-	})
+	// 		for (var k = 1; k < game.screenShots.length; k++) {
+	// 			var url = game.screenShots[k];
+	// 			var $image = $gameImage.clone(true);
+	// 			$image.find('a').attr('href',url)
+	// 			$image.find('img').attr('src',url)
+	// 			//add it
+	// 			$game.find('.screenShots').append($image);
+	// 		};
+	// 	};
+	// })
 
 	</script>
 </html>

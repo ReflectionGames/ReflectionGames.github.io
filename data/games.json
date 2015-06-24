@@ -4,6 +4,7 @@
 		"visible": true,
 		"title": "grid movement test",
 		"description": "simple test game,",
+		"longDescription": "simple test game,",
 		"sourceURL": "https://github.com/ReflectionGames/grid-movement-test",
 		"siteURL": "",
 		"downloadURL": "",
@@ -12,6 +13,7 @@
 			"width": "640",
 			"height": "480"
 		},
+		"coverImage": "/res/images/screenshots/grid-movement-test/screenshot1.png",
 		"screenShots": [
 			"/res/images/screenshots/grid-movement-test/screenshot1.png"
 		]

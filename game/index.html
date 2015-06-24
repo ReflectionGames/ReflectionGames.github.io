@@ -25,6 +25,31 @@
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
+
+		<style type="text/css">
+		#coverImage{
+			display: inline-block;
+			width: 20%;
+			float: left;
+		}
+		#head{
+			padding-left: 20px;
+			float: left;
+		}
+		#screenshots{
+			height: 300px;
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.screenshot{
+			height: 100%;
+			margin: 0 10px 0 10px;
+		}
+		.screenshot img{
+			width: auto;
+			height: 100%;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -46,8 +71,97 @@
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
+
+					<div class="row" bind-if="game">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<img id="coverImage" bind-src="game.coverImage">
+							<div id="head">
+								<h2>{game.title}</h2>
+								<p>{game.description}</p>
+								<div class="buttons">
+									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id"><i class="fa fa-gamepad"></i> Play</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" bind-if="game" style="margin-top: 20px;">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div role="tabpanel">
+							    <!-- Nav tabs -->
+							    <ul class="nav nav-tabs" role="tablist">
+							        <li role="presentation" class="active">
+							            <a href="#details" data-toggle="tab">Details</a>
+							        </li>
+							        <li role="presentation">
+							            <a href="#share" data-toggle="tab">share</a>
+							        </li>
+							    </ul>
+							
+							    <!-- Tab panes -->
+							    <div class="tab-content">
+							        <div role="tabpanel" class="tab-pane active" id="details">
+							        	<!-- screen shots -->
+							        	<div class="row" style="margin-top: 20px;">
+											<div id="screenshots" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-foreach="screenshots">
+												<a class="screenshot" bind-href="src" data-gallery><img bind-src="src"></a>
+											</div>
+							        	</div>
+							        	<!-- description -->
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="page-header">
+												  	<h2>Description</h2>
+												</div>
+												  <p>{game.longDescription}</p>
+											</div>
+										</div>
+							        </div>
+							        <div role="tabpanel" class="tab-pane" id="share">...</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
+		</div>
+
+		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+
+		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+		    <!-- The container for the modal slides -->
+		    <div class="slides"></div>
+		    <!-- Controls for the borderless lightbox -->
+		    <h3 class="title"></h3>
+		    <a class="prev"><i class="fa fa-chevron-left"></i></a>
+		    <a class="next"><i class="fa fa-chevron-right"></i></a>
+		    <a class="close"><i class="fa fa-times"></i></a>
+		    <a class="play-pause"></a>
+		    <ol class="indicator"></ol>
+		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+		    <div class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" aria-hidden="true"><i class="fa fa-times"></i></button>
+		                    <h4 class="modal-title"></h4>
+		                </div>
+		                <div class="modal-body next"></div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default pull-left prev">
+		                        <i class="fa fa-chevron-left"></i>
+		                        Previous
+		                    </button>
+		                    <button type="button" class="btn btn-primary next">
+		                        Next
+		                        <i class="fa fa-chevron-right"></i>
+		                    </button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		</div>
 	</body>
 
@@ -55,7 +169,8 @@
 
 	page = {
 		search: utils.parseSearch(),
-		game: undefined
+		game: undefined,
+		screenshots: []
 	}
 
 	bindings.createModal(page);
@@ -63,6 +178,9 @@
 
 	utils.loadGame(page.search.game,function(game){
 		page.game = game;
+		for (var i = 0; i < game.screenShots.length; i++) {
+			page.screenshots.push({src:game.screenShots[i]});
+		};
 	})
 
 	</script>

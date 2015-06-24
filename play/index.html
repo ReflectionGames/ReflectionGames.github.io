@@ -82,6 +82,7 @@
 			'max-height': parseInt(data.size.height)
 		})
 		$('#game').css('display','block');
+		$('#game').get(0).focus();
 	}
 
 	var id = utils.parseSearch(location.search).game;

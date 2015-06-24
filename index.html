@@ -25,6 +25,12 @@
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
+
+		<style type="text/css">
+			.game .coverImage{
+				width: 100%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -46,6 +52,47 @@
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
+
+					<div class="row">
+						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+							<div id="games" class="row" bind-foreach="games">
+
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="game panel panel-default">
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-xs-5">
+													<img class="coverImage" bind-src="coverImage">
+												</div>
+												<div class="col-xs-7">
+													<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
+													<p class="desc">{description}</p>
+													<p>
+														<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+														<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="panel panel-default">
+							  	<div class="panel-heading">
+									<h3 class="panel-title">Links</h3>
+							  	</div>
+								<div class="panel-body">
+									<div class="list-group">
+										<a href="//github.com/ReflectionGames" class="list-group-item"><i class="fa fa-github"></i> GitHub</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -87,4 +134,19 @@
 		    </div>
 		</div>
 	</body>
+
+	<script type="text/javascript">
+
+		page = {
+			games: []
+		}
+
+		bindings.createModal(page)
+		bindings.applyBindings(page);
+
+		utils.loadGames(function(games){
+			page.games = games;
+		})
+
+	</script>
 </html>
