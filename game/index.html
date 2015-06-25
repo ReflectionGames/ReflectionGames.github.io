@@ -2,6 +2,16 @@
 <html>
 	<head>
 		<title>{game.title}</title>
+		<meta name="description" bind-attr-content="game.description"/>
+
+		<!-- Open Graph data -->
+		<meta property="og:title" bind-attr-content="game.title" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" bind-attr-content="location.href" />
+		<meta property="og:image" bind-attr-content="game.coverImage" />
+		<meta property="og:description" bind-attr-content="game.description" />
+		<meta property="og:site_name" content="Reflection Games" />
+
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -117,7 +127,30 @@
 											</div>
 										</div>
 							        </div>
-							        <div role="tabpanel" class="tab-pane" id="share">...</div>
+							        <div role="tabpanel" class="tab-pane" id="share">
+									    <h3>Share</h3>
+									    <p>
+									    <a href="#" onclick="
+									      window.open(
+									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+									      'facebook-share-dialog', 
+									      'width=626,height=436'); 
+									      return false;" class="btn btn-info" style="background-color:#3B5998; min-width:175px;">
+									      <i class="fa fa-facebook"></i> Share on Facebook
+									    </a>
+									    </p>
+									    <p>
+									    <a bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" class="twitter-share-button btn btn-info" data-related="YoYoGasbox" data-lang="en" style="background-color:#019AD2; min-width:175px;" target="_blank">
+									      <i class="fa fa-twitter"></i> Share on Twitter
+									    </a>
+									    </p>
+									    <p>
+									    <a bind-href="'https://plus.google.com/share?url='+location.href" onclick="
+									    	javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+									    	return false;
+									    	" class="btn btn-info" style="background-color:#DD4C39; min-width:175px;"><i class="fa fa-google-plus"></i> Share on Google+</a>
+									    </p>
+							        </div>
 							    </div>
 							</div>
 						</div>
@@ -127,7 +160,21 @@
 			</div>
 		</div>
 
-		<button id="back-to-top" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+		<button id="back-to-top" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
+		<script type="text/javascript">
+			$('#back-to-top').click(function(){
+				$.smoothScroll({offset: 0});
+			});
+			$(document).scroll(function() {
+				$('#back-to-top').css('opacity',($(document).scrollTop()-200)/300);
+				if($('#back-to-top').css('opacity') > 0){
+					$('#back-to-top').show();
+				}
+				else{
+					$('#back-to-top').hide();
+				}
+			});
+		</script>
 
 		<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 		<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
