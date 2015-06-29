@@ -37,8 +37,8 @@
 					]
 				},
 				"description": "Remember to extract the <b>.exe</b> file out of the <b>.zip</b> file, other whise saving/loading games might gett a little messed up",
-				"link": "https://cdn.rawgit.com/ReflectionGames/Elvanteen/downloads/complete/Elvanteen.zip",
-				"dirLink": "https://github.com/ReflectionGames/Elvanteen/tree/downloads"
+				"link": "https://cdn.rawgit.com/ReflectionGames/Elvanteen/master/download/complete/Elvanteen.zip",
+				"dirLink": "https://github.com/ReflectionGames/Elvanteen/tree/master/download"
 			}
 		],
 		"iframeURL": "",
