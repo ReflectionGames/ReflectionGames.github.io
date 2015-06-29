@@ -72,14 +72,14 @@
 							<div class="game panel panel-default">
 							  	<div class="panel-body">
 							  		<div class="row">
-							  			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-									  		<a bind-href="'/game?game='+id"><img bind-src="screenShots[0]"></a>
+							  			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+									  		<a bind-href="'/game?game='+id"><img bind-src="coverImage"></a>
 								  		</div>
-								  		<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+								  		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 									  		<h2>{title}</h2>
 									  		<p>{description}</p>
 
-									  		<a type="button" href="#" class="btn btn-success pull-right" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+									  		<a type="button" href="#" class="btn btn-success pull-right" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 								  			<a type="button" href="#" class="btn btn-info pull-right" bind-href="'/game?game='+id">View</a>
 								  	
 								  		</div>

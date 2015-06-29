@@ -3,11 +3,10 @@
 		"id": "grid-movement-test",
 		"visible": true,
 		"title": "grid movement test",
-		"description": "simple test game,",
+		"description": "simple test game.",
 		"longDescription": "simple test game,",
 		"sourceURL": "https://github.com/ReflectionGames/grid-movement-test",
-		"siteURL": "",
-		"downloadURL": "",
+		"downloads": [],
 		"iframeURL": "https://cdn.rawgit.com/ReflectionGames/grid-movement-test/master/index.html",
 		"size": {
 			"width": "640",
@@ -16,6 +15,43 @@
 		"coverImage": "/res/images/screenshots/grid-movement-test/screenshot1.png",
 		"screenShots": [
 			"/res/images/screenshots/grid-movement-test/screenshot1.png"
+		]
+	},
+	{
+		"id": "elvanteen",
+		"visible": true,
+		"title": "Elvanteen",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "https://github.com/ReflectionGames/Elvanteen",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "Remember to extract the <b>.exe</b> file out of the <b>.zip</b> file, other whise saving/loading games might gett a little messed up",
+				"link": "https://cdn.rawgit.com/ReflectionGames/Elvanteen/downloads/complete/Elvanteen.zip",
+				"dirLink": "https://github.com/ReflectionGames/Elvanteen/tree/downloads"
+			}
+		],
+		"iframeURL": "",
+		"size": {
+			"width": "640",
+			"height": "480"
+		},
+		"coverImage": "/res/images/screenshots/elvanteen/screenshot3.png",
+		"screenShots": [
+			"/res/images/screenshots/elvanteen/screenshot.png",
+			"/res/images/screenshots/elvanteen/screenshot2.png",
+			"/res/images/screenshots/elvanteen/screenshot3.png",
+			"/res/images/screenshots/elvanteen/screenshot4.png"
 		]
 	}
 ]

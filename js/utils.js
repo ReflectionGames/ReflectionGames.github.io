@@ -42,6 +42,6 @@ utils = {
 	    return utils.parseSearch.cache;
 	},
 	serverError: function(id,message,back){
-		location.replace('/errors/'+id+'.html?message='+message+'&back='+back);
+		location.replace('/errors/'+id+'.html?message='+message+((back)? '&back='+back : '') );
 	}
 }

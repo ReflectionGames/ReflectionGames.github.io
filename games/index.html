@@ -74,7 +74,7 @@
 											<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
 											<p class="desc">{description}</p>
 											<p>
-												<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+												<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 												<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
 											</p>
 										</div>
@@ -85,29 +85,6 @@
 						
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<div id="temp" style="display: none;">
-			<div class="col-md-4 game">
-				<div class="thumbnail">
-					<a class="cover" href="" data-gallery="">
-						<img src="">
-					</a>
-					<div class="screenshots"></div>
-					<div class="caption">
-						<h3 class="title" style="margin-top: 0px; display: inline-block;">cannontest</h3>
-						<p class="desc">A Three.js and Cannon.js Test Project</p>
-						<div>
-							<a class="btn btn-primary source-link" href="" target="_blank"><i class="fa fa-code-fork"></i> Source Code</a>
-							<a class="btn btn-success pull-right play-link" href=""><i class="fa fa-gamepad"></i> Play</a>
-							<a class="btn btn-info pull-right view-link" href="">View</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="game-image">
-				<a data-gallery="" href=""><img src=""></a>
 			</div>
 		</div>
 		

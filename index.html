@@ -79,7 +79,7 @@
 													<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
 													<p class="desc">{description}</p>
 													<p>
-														<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id"><i class="fa fa-gamepad"></i> Play</a>
+														<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 														<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
 													</p>
 												</div>

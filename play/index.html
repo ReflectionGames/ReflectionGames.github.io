@@ -89,7 +89,12 @@
 	if(id){
 		utils.loadGame(id,function(game){
 			if(game){
-				loadGame(game);
+				if(game.iframeURL.length){
+					loadGame(game);
+				}
+				else{
+					utils.serverError('400','That game cant be played online, check to see if it has a download avalible','/games')
+				}
 			}
 			else{
 				utils.serverError('404','Cant Seem to find that game, it might have been removed.','/games')
