@@ -31,6 +31,9 @@
 				height: 100%;
 				overflow: hidden;
 			}
+			nav{
+				margin: 0px !important;
+			}
 			#game{
 				border: transparent;
 			    overflow: hidden;
@@ -38,6 +41,14 @@
 			    height: 100%;
 			    display: none;
 			    margin: auto;
+			}
+			#game-container{
+			    position: absolute;
+			    left: 0px;
+			    right: 0px;
+			    bottom: 0px;
+			    top: 40px;
+			    z-index: 0;
 			}
 		</style>
 	</head>
@@ -59,8 +70,9 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 					<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+					<li><a href="/prototypes"><i class="fa fa-gamepad"></i> Prototypes</a></li>
 				</ul>
-				<form class="navbar-form navbar-right" role="search" action="/games/search.html">
+				<form class="navbar-form navbar-right" role="search" action="/search">
 					<div class="form-group">
 						<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
 					</div>
@@ -69,7 +81,9 @@
 			</div><!-- /.navbar-collapse -->
 		</nav>
 
-		<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+		<div id="game-container">
+			<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
+		</div>
 	</body>
 
 	<script type="text/javascript">
@@ -78,19 +92,20 @@
 		$('#game').attr({
 			src: data.iframeURL
 		}).css({
-			'max-width': parseInt(data.size.width),
-			'max-height': parseInt(data.size.height)
+			'max-width': data.size.width,
+			'max-height': data.size.height
 		})
+		$('#game-container').css('padding',data.size.padding)
 		$('#game').css('display','block');
 		$('#game').get(0).focus();
 	}
 
 	var id = utils.parseSearch(location.search).game;
 	if(id){
-		utils.loadGame(id,function(game){
-			if(game){
-				if(game.iframeURL.length){
-					loadGame(game);
+		var func = function(data){
+			if(data){
+				if(data.iframeURL.length){
+					loadGame(data);
 				}
 				else{
 					utils.serverError('400','That game cant be played online, check to see if it has a download avalible','/games')
@@ -98,6 +113,14 @@
 			}
 			else{
 				utils.serverError('404','Cant Seem to find that game, it might have been removed.','/games')
+			}
+		};
+		utils.loadGame(id,function(data){
+			if(!data){
+				utils.loadPrototype(id,func);
+			}
+			else{
+				func(data);
 			}
 		});
 	}

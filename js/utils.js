@@ -1,13 +1,16 @@
 utils = {
 	loadGames: function(cb){
 		if(!utils.loadGames.cache){
+			utils.loadGames.cache = [];
 			$.ajax({
 				url: '/data/games.json',
 				type: 'get',
 				dataType: 'json'
 			})
 			.done(function(json) {
-				utils.loadGames.cache = json;
+				for (var i = 0; i < json.length; i++) {
+					utils.loadGames.cache.push(json[i]);
+				};
 				if(cb) cb(json);
 			})
 			.fail(function() {
@@ -17,12 +20,47 @@ utils = {
 		else{
 			if(cb) cb(utils.loadGames.cache);
 		}
+		return utils.loadGames.cache;
 	},
 	loadGame: function(id,cb){
 		utils.loadGames(function(games){
 			for (var i = 0; i < games.length; i++) {
 				if(games[i].id === id){
 					if(cb) cb(games[i]);
+					return;
+				}
+			};
+			if(cb) cb(false);
+		})
+	},
+	loadPrototypes: function(cb){
+		if(!utils.loadPrototypes.cache){
+			utils.loadPrototypes.cache = [];
+			$.ajax({
+				url: '/data/prototypes.json',
+				type: 'get',
+				dataType: 'json'
+			})
+			.done(function(json) {
+				for (var i = 0; i < json.length; i++) {
+					utils.loadPrototypes.cache.push(json[i]);
+				};
+				if(cb) cb(json);
+			})
+			.fail(function() {
+				if(cb) cb(false);
+			})
+		}
+		else{
+			if(cb) cb(utils.loadPrototypes.cache);
+		}
+		return utils.loadPrototypes.cache;
+	},
+	loadPrototype: function(id,cb){
+		utils.loadPrototypes(function(prototypes){
+			for (var i = 0; i < prototypes.length; i++) {
+				if(prototypes[i].id === id){
+					if(cb) cb(prototypes[i]);
 					return;
 				}
 			};

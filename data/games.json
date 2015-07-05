@@ -1,23 +1,5 @@
 [
 	{
-		"id": "grid-movement-test",
-		"visible": true,
-		"title": "grid movement test",
-		"description": "simple test game.",
-		"longDescription": "simple test game,",
-		"sourceURL": "https://github.com/ReflectionGames/grid-movement-test",
-		"downloads": [],
-		"iframeURL": "https://cdn.rawgit.com/ReflectionGames/grid-movement-test/master/index.html",
-		"size": {
-			"width": "640",
-			"height": "480"
-		},
-		"coverImage": "/res/images/screenshots/grid-movement-test/screenshot1.png",
-		"screenShots": [
-			"/res/images/screenshots/grid-movement-test/screenshot1.png"
-		]
-	},
-	{
 		"id": "elvanteen",
 		"visible": true,
 		"title": "Elvanteen",
@@ -43,15 +25,16 @@
 		],
 		"iframeURL": "https://rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
 		"size": {
-			"width": "640",
-			"height": "480"
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
 		},
-		"coverImage": "/res/images/screenshots/elvanteen/screenshot3.png",
+		"coverImage": "/res/images/screenshots/games/elvanteen/screenshot3.png",
 		"screenShots": [
-			"/res/images/screenshots/elvanteen/screenshot.png",
-			"/res/images/screenshots/elvanteen/screenshot2.png",
-			"/res/images/screenshots/elvanteen/screenshot3.png",
-			"/res/images/screenshots/elvanteen/screenshot4.png"
+			"/res/images/screenshots/games/elvanteen/screenshot.png",
+			"/res/images/screenshots/games/elvanteen/screenshot2.png",
+			"/res/images/screenshots/games/elvanteen/screenshot3.png",
+			"/res/images/screenshots/games/elvanteen/screenshot4.png"
 		]
 	}
 ]

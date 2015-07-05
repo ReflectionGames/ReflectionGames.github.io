@@ -1,0 +1,18 @@
+#games{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 10px 0 10px;
+}
+.game{
+    margin: 5px;
+    flex-shrink: 0;
+    width: 300px;
+    flex-grow: 1;
+    min-width: 320px;
+}
+@media (min-width: 768px){
+	.game{
+		max-width: 50%;
+	}
+}

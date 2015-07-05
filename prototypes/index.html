@@ -52,8 +52,8 @@
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
 							<ul class="nav navbar-nav">
 								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-								<li class="active"><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
-								<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
+								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+								<li class="active"><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
 							</ul>
 							<form class="navbar-form navbar-right" role="search" action="/search">
 								<div class="form-group">
@@ -118,7 +118,7 @@
 	})
 
 	page = {
-		games: utils.loadGames()
+		games: utils.loadPrototypes()
 	}
 
 	bindings.createModal(page);

@@ -1,0 +1,42 @@
+[
+	{
+		"id": "grid-movement-test",
+		"visible": true,
+		"title": "grid movement test",
+		"description": "simple test game.",
+		"longDescription": "simple test game,",
+		"sourceURL": "https://github.com/ReflectionGames/grid-movement-test",
+		"downloads": [],
+		"iframeURL": "https://cdn.rawgit.com/ReflectionGames/grid-movement-test/master/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "/res/images/screenshots/prototypes/grid-movement-test/screenshot1.png",
+		"screenShots": [
+			"/res/images/screenshots/prototypes/grid-movement-test/screenshot1.png"
+		]
+	},
+	{
+		"id": "block-script",
+		"visible": true,
+		"title": "Block-Script",
+		"description": "A simple minecraft like ThreeJS example",
+		"longDescription": "",
+		"sourceURL": "https://github.com/rdfriedl/block-script",
+		"downloads": [],
+		"iframeURL": "http://rdfriedl.github.io/block-script/",
+		"size": {
+			"padding": 0,
+			"width": "100%",
+			"height": "100%"
+		},
+		"coverImage": "/res/images/screenshots/prototypes/block-script/block-script2.png",
+		"screenShots": [
+			"/res/images/screenshots/prototypes/block-script/block-script.png",
+			"/res/images/screenshots/prototypes/block-script/block-script2.png",
+			"/res/images/screenshots/prototypes/block-script/block-script3.png"
+		]
+	}
+]

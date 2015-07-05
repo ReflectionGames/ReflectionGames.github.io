@@ -77,8 +77,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+								<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
 							</ul>
-							<form class="navbar-form navbar-right" role="search" action="/games/search.html">
+							<form class="navbar-form navbar-right" role="search" action="/search">
 								<div class="form-group">
 									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
 								</div>
@@ -242,9 +243,9 @@
 	bindings.createModal(page);
 	bindings.applyBindings(page,document);
 
-	utils.loadGame(page.search.game,function(game){
+	var func = function(game){
 		if(game){
-		page.game = game;
+			page.game = game;
 			for (var i = 0; i < game.screenShots.length; i++) {
 				page.screenshots.push({src:game.screenShots[i]});
 			};
@@ -253,7 +254,16 @@
 		else{
 			utils.serverError('404','There is no game with that id')
 		}
-	})
+	}
+
+	utils.loadGame(page.search.game,function(data){
+		if(!data){
+			utils.loadPrototype(page.search.game,func);
+		}
+		else{
+			func(data);
+		}
+	});
 
 	</script>
 </html>

@@ -26,6 +26,7 @@
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
 
+		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
 		<style type="text/css">
 		.game img{
 			display: inline-block;
@@ -57,8 +58,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+								<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
 							</ul>
-							<form class="navbar-form navbar-right" role="search" action="/games/search.html">
+							<form class="navbar-form navbar-right" role="search" action="/search">
 								<div class="form-group">
 									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" bind-value="search">
 								</div>
@@ -68,24 +70,22 @@
 					</nav>
 
 					<div id="games" class="row" bind-foreach="searchGames">
-						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-							<div class="game panel panel-default">
-							  	<div class="panel-body">
-							  		<div class="row">
-							  			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-									  		<a bind-href="'/game?game='+id"><img bind-src="coverImage"></a>
-								  		</div>
-								  		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-									  		<h2>{title}</h2>
-									  		<p>{description}</p>
-
-									  		<a type="button" href="#" class="btn btn-success pull-right" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
-								  			<a type="button" href="#" class="btn btn-info pull-right" bind-href="'/game?game='+id">View</a>
-								  	
-								  		</div>
+						<div class="game panel panel-default">
+						  	<div class="panel-body">
+						  		<div class="row">
+						  			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								  		<a bind-href="'/game?game='+id"><img bind-src="coverImage"></a>
 							  		</div>
-							  	</div>
-							</div>
+							  		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								  		<h2>{title}</h2>
+								  		<p>{description}</p>
+
+								  		<a type="button" href="#" class="btn btn-success pull-right" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+							  			<a type="button" href="#" class="btn btn-info pull-right" bind-href="'/game?game='+id">View</a>
+							  	
+							  		</div>
+						  		</div>
+						  	</div>
 						</div>
 					</div>
 
