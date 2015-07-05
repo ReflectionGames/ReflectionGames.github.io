@@ -41,7 +41,7 @@
 				"dirLink": "https://github.com/ReflectionGames/Elvanteen/tree/master/download"
 			}
 		],
-		"iframeURL": "",
+		"iframeURL": "https://rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
 		"size": {
 			"width": "640",
 			"height": "480"
