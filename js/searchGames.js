@@ -22,14 +22,21 @@ var searchGames = function(games) {
  
 $(document).ready(function() {
     utils.loadGames(function(games){
-        $('#searchGames').typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 1
-        },
-        {
-            name: 'states',
-            source: searchGames(games)
-        });
+        var games = games;
+
+        //load prototypes after games
+        utils.loadPrototypes(function(data){
+            games = games.concat(data);
+
+            $('#searchGames').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            },
+            {
+                name: 'states',
+                source: searchGames(games)
+            });
+        })
     })
 });

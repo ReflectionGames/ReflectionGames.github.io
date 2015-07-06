@@ -125,24 +125,31 @@
 
 	utils.loadGames(function(games){
 		page.games = games;
-		page.searchFunc = searchGames(games);
+		
+		//load prototypes after games
+		utils.loadPrototypes(function(data){
+			page.games = page.games.concat(data);
+			var games = page.games;
 
-		page.search = utils.parseSearch().search || '';
-		page.searchFunc(page.search,function(results){
-			for (var i = 0; i < games.length; i++) {
-				var game;
-				for (var k = 0; k < results.length; k++) {
-					if(games[i].title == results[k]){
-						game = games[i];
-						break;
+			page.searchFunc = searchGames(games);
+
+			page.search = utils.parseSearch().search || '';
+			page.searchFunc(page.search,function(results){
+				for (var i = 0; i < games.length; i++) {
+					var game;
+					for (var k = 0; k < results.length; k++) {
+						if(games[i].title == results[k]){
+							game = games[i];
+							break;
+						}
+					};
+
+					if(game){
+						page.searchGames.push(game);
 					}
 				};
-
-				if(game){
-					page.searchGames.push(game);
-				}
-			};
-		});
+			});
+		})
 	})
 
 	</script>

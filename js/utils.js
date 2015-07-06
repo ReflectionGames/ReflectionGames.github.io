@@ -1,6 +1,6 @@
 utils = {
 	loadGames: function(cb){
-		if(!utils.loadGames.cache){
+		if(!utils.loadGames.cache || !utils.loadGames.returned){
 			utils.loadGames.cache = [];
 			$.ajax({
 				url: '/data/games.json',
@@ -8,6 +8,7 @@ utils = {
 				dataType: 'json'
 			})
 			.done(function(json) {
+				utils.loadGames.returned = true;
 				for (var i = 0; i < json.length; i++) {
 					utils.loadGames.cache.push(json[i]);
 				};
@@ -34,7 +35,7 @@ utils = {
 		})
 	},
 	loadPrototypes: function(cb){
-		if(!utils.loadPrototypes.cache){
+		if(!utils.loadPrototypes.cache || !utils.loadPrototypes.returned){
 			utils.loadPrototypes.cache = [];
 			$.ajax({
 				url: '/data/prototypes.json',
@@ -42,6 +43,7 @@ utils = {
 				dataType: 'json'
 			})
 			.done(function(json) {
+				utils.loadPrototypes.returned = true;
 				for (var i = 0; i < json.length; i++) {
 					utils.loadPrototypes.cache.push(json[i]);
 				};
