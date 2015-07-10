@@ -145,18 +145,13 @@
 
 			page.search = utils.parseSearch().search || '';
 			page.searchFunc(page.search,function(results){
-				for (var i = 0; i < games.length; i++) {
-					var game;
-					for (var k = 0; k < results.length; k++) {
+				for (var k = 0; k < results.length; k++) {
+					for (var i = 0; i < games.length; i++) {
 						if(games[i].title == results[k]){
-							game = games[i];
+							page.searchGames.push(games[i]);
 							break;
 						}
 					};
-
-					if(game){
-						page.searchGames.push(game);
-					}
 				};
 			});
 		})

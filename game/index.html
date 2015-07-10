@@ -149,25 +149,25 @@
 							        <div role="tabpanel" class="tab-pane" id="share">
 									    <h3>Share</h3>
 									    <p>
-									    <a href="#" onclick="
+									    <a class="facebook-share-button btn btn-info" href="#" bind-click="$modal.shareFacebook()" onclick="
 									      window.open(
 									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
 									      'facebook-share-dialog', 
 									      'width=626,height=436'); 
-									      return false;" class="btn btn-info" style="background-color:#3B5998; min-width:175px;">
+									      return false;" style="background-color:#3B5998; min-width:175px;">
 									      <i class="fa fa-facebook"></i> Share on Facebook
 									    </a>
 									    </p>
 									    <p>
-									    <a bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" class="twitter-share-button btn btn-info" data-related="YoYoGasbox" data-lang="en" style="background-color:#019AD2; min-width:175px;" target="_blank">
+									    <a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" target="_blank" style="background-color:#019AD2; min-width:175px;">
 									      <i class="fa fa-twitter"></i> Share on Twitter
 									    </a>
 									    </p>
 									    <p>
-									    <a bind-href="'https://plus.google.com/share?url='+location.href" onclick="
+									    <a class="googlePlus-share-button btn btn-info" bind-click="$modal.shareGooglePlus()" bind-href="'https://plus.google.com/share?url='+location.href" onclick="
 									    	javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 									    	return false;
-									    	" class="btn btn-info" style="background-color:#DD4C39; min-width:175px;"><i class="fa fa-google-plus"></i> Share on Google+</a>
+									    	" style="background-color:#DD4C39; min-width:175px;"><i class="fa fa-google-plus"></i> Share on Google+</a>
 									    </p>
 							        </div>
 							        <div role="tabpanel" class="tab-pane" id="download">
@@ -176,7 +176,7 @@
 									    	  	<h3><i bind-attr-class="'fa fa-'+os.id"></i> <b bind-text="os.title"></b> <small bind-text="os.versions.join(', ')"></small></h3>
 									    	</div>
 									    	<p bind-html="description || ''"></p>
-									    	<a class="btn btn-success" bind-href="link" target="_blank"><i class="fa fa-download"></i> Download</a>
+									    	<a class="btn btn-success" bind-href="link" bind-click="$modal.download(os)" target="_blank"><i class="fa fa-download"></i> Download</a>
 									    	<a class="btn btn-primary" bind-href="dirLink" bind-visible="dirLink.length > 0" target="_blank"><i class="fa fa-folder-open"></i> Download Directory</a>
 									    </div>
 							        </div>
@@ -247,7 +247,19 @@
 		search: utils.parseSearch(),
 		game: undefined,
 		screenshots: [],
-		downloads: []
+		downloads: [],
+		download: function(os){
+			ga('send','event','game','download',os.title);
+		},
+		shareFacebook: function(){
+			ga('send','event','game','share','Facebook');
+		},
+		shareTwitter: function(){
+			ga('send','event','game','share','Twitter');
+		},
+		shareGooglePlus: function(){
+			ga('send','event','game','share','Google+');
+		}
 	}
 
 	bindings.createModal(page);
@@ -260,6 +272,9 @@
 				page.screenshots.push({src:game.screenShots[i]});
 			};
 			page.downloads = game.downloads;
+
+			//send GA data
+		 	ga('send', 'event', 'game', 'view', game.title);
 		}
 		else{
 			utils.serverError('404','There is no game with that id')

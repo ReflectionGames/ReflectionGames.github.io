@@ -1,5 +1,7 @@
 utils = {
 	loadGames: function(cb){
+		utils.loadGames.callbacks = utils.loadGames.callbacks || [];
+			
 		if(!utils.loadGames.cache){
 			utils.loadGames.cache = [];
 			$.ajax({
@@ -28,7 +30,6 @@ utils = {
 			})
 		}
 		else if(!utils.loadGames.returned){
-			utils.loadGames.callbacks = utils.loadGames.callbacks || [];
 			utils.loadGames.callbacks.push(cb);
 		}
 		else{
@@ -48,6 +49,8 @@ utils = {
 		})
 	},
 	loadPrototypes: function(cb){
+		utils.loadPrototypes.callbacks = utils.loadPrototypes.callbacks || [];
+
 		if(!utils.loadPrototypes.cache){
 			utils.loadPrototypes.cache = [];
 			$.ajax({
@@ -76,7 +79,6 @@ utils = {
 			})
 		}
 		else if(!utils.loadPrototypes.returned){
-			utils.loadPrototypes.callbacks = utils.loadPrototypes.callbacks || [];
 			utils.loadPrototypes.callbacks.push(cb);
 		}
 		else{

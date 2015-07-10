@@ -108,6 +108,9 @@
 		$('#game-container').css('padding',data.size.padding)
 		$('#game').css('display','block');
 		$('#game').get(0).focus();
+
+		//send GA data
+	 	ga('send', 'event', 'game', 'play', game.title);
 	}
 
 	var id = utils.parseSearch(location.search).game;
