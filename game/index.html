@@ -249,16 +249,16 @@
 		screenshots: [],
 		downloads: [],
 		download: function(os){
-			ga('send','event','game','download',os.title);
+			ga('send','event','download',os.title,'');
 		},
 		shareFacebook: function(){
-			ga('send','event','game','share','Facebook');
+			ga('send','event','share','Facebook','');
 		},
 		shareTwitter: function(){
-			ga('send','event','game','share','Twitter');
+			ga('send','event','share','Twitter','');
 		},
 		shareGooglePlus: function(){
-			ga('send','event','game','share','Google+');
+			ga('send','event','share','Google+','');
 		}
 	}
 
@@ -274,7 +274,7 @@
 			page.downloads = game.downloads;
 
 			//send GA data
-		 	ga('send', 'event', 'game', 'view', game.title);
+		 	ga('send', 'event', 'view', game.title, '');
 		}
 		else{
 			utils.serverError('404','There is no game with that id')
