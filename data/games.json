@@ -36,5 +36,25 @@
 			"/res/images/screenshots/games/elvanteen/screenshot3.png",
 			"/res/images/screenshots/games/elvanteen/screenshot4.png"
 		]
+	},
+	{
+		"id": "buttons-and-doors",
+		"visible": true,
+		"title": "Buttons & Doors",
+		"description": "A simple puzzle game",
+		"longDescription": "",
+		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
+		"downloads": [],
+		"iframeURL": "https://rdfriedl.github.io/buttons-and-doors",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png",
+		"screenShots": [
+			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
+			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
+		]
 	}
 ]
