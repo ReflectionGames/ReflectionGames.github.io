@@ -1,18 +1,25 @@
-#games{
+#games, #prototypes{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 10px 0 10px;
 }
-.game{
+.game, .prototype{
     margin: 5px;
     flex-shrink: 0;
     width: 300px;
     flex-grow: 1;
     min-width: 320px;
 }
+.game:hover, .prototype:hover{
+    background: #485563;
+    cursor: pointer;
+}
+.game .coverImage, .prototype .coverImage{
+    width: 100%;
+}
 @media (min-width: 768px){
-	.game{
+	.game, .prototype{
 		max-width: 50%;
 	}
 }

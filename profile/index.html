@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title bind-text="'Reflection Games - ' + profile.name">Reflection Games</title>
+		<title bind-text="'Reflection Games - ' + profile.name">Reflection Games - Profile</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -26,6 +26,7 @@
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
 
+		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
 		<style type="text/css">
 		#profileImage{
 			display: inline-block;
@@ -36,29 +37,6 @@
 			padding-left: 20px;
 			float: left;
 		}
-
-		.games,.prototypes{
-		    display: flex;
-		    flex-direction: row;
-		    flex-wrap: wrap;
-		    padding: 0 10px 0 10px;
-		}
-		.game,.prototype{
-		    margin: 5px;
-		    flex-shrink: 0;
-		    width: 300px;
-		    flex-grow: 1;
-		    min-width: 320px;
-		}
-		.game .coverImage,.prototype .coverImage{
-			width: 100%;
-		}
-		@media (min-width: 768px){
-			.game,.prototype{
-				max-width: 50%;
-			}
-		}
-
 		</style>
 
 		<script>
@@ -127,10 +105,10 @@
 							            <a href="#details" data-toggle="tab"><i class="fa fa-info"></i> About</a>
 							        </li>
 							        <li role="presentation">
-							            <a href="#games" data-toggle="tab" bind-visible="games.length"><i class="fa fa-gamepad"></i> Games</a>
+							            <a href="#games-tab" data-toggle="tab" bind-visible="games.length"><i class="fa fa-gamepad"></i> Games</a>
 							        </li>
 							        <li role="presentation">
-							            <a href="#prototypes" data-toggle="tab" bind-visible="prototypes.length"><i class="fa fa-flask"></i> Prototypes</a>
+							            <a href="#prototypes-tab" data-toggle="tab" bind-visible="prototypes.length"><i class="fa fa-flask"></i> Prototypes</a>
 							        </li>
 							        <li role="presentation">
 							            <a href="#share" data-toggle="tab"><i class="fa fa-share-alt"></i> Share</a>
@@ -174,11 +152,11 @@
 									    	" style="background-color:#DD4C39; min-width:175px;"><i class="fa fa-google-plus"></i> Share on Google+</a>
 									    </p>
 							        </div>
-							        <div role="tabpanel" class="tab-pane" id="games">
-									    <div class="games" bind-foreach="games">
+							        <div role="tabpanel" class="tab-pane" id="games-tab">
+									    <div id="games" bind-foreach="games">
 											
 											<!-- game -->
-											<div class="game panel panel-default">
+											<div class="game panel panel-default" bind-attr-game-id="id">
 												<div class="panel-body">
 													<div class="row">
 														<div class="col-xs-4">
@@ -189,7 +167,6 @@
 															<p class="desc" bind-text="description"></p>
 															<p>
 																<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
-																<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
 															</p>
 														</div>
 													</div>
@@ -198,11 +175,11 @@
 
 									    </div>
 							        </div>
-							        <div role="tabpanel" class="tab-pane" id="prototypes">
-									    <div class="prototypes" bind-foreach="prototypes">
+							        <div role="tabpanel" class="tab-pane" id="prototypes-tab">
+									    <div id="prototypes" bind-foreach="prototypes">
 											
 											<!-- prototype -->
-											<div class="prototype panel panel-default">
+											<div class="prototype panel panel-default" bind-attr-game-id="id">
 												<div class="panel-body">
 													<div class="row">
 														<div class="col-xs-4">
@@ -213,7 +190,6 @@
 															<p class="desc" bind-text="description"></p>
 															<p>
 																<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
-																<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
 															</p>
 														</div>
 													</div>
@@ -305,6 +281,10 @@
 	bindings.applyBindings(page,document);
 
 	utils.loadMember(utils.parseSearch().member,function(data){
+		if(!data){
+			utils.serverError('404','Cant find a member with that name');
+			return;
+		}
 		page.profile = data;
 		page.links = data.links;
 
@@ -327,6 +307,10 @@
 		})
 
 		ga('send', 'event', 'view', 'profile', data.name);
+	})
+
+	$(document).on('click','.game, .prototype',function(){
+		window.open('/game?game='+$(this).attr('game-id'),'_self');
 	})
 
 	</script>
