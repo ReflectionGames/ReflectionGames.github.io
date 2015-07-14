@@ -111,7 +111,7 @@
 		$('#game').get(0).focus();
 
 		//send GA data
-	 	ga('send', 'event', 'play', 'game', game.title);
+	 	ga('send', 'event', 'play', 'game', data.title);
 	}
 
 	var id = utils.parseSearch(location.search).game;
