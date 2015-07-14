@@ -1,0 +1,40 @@
+[
+	{
+		"name": "Rdfriedl",
+		"profileImage": "https://avatars2.githubusercontent.com/u/8001706?v=3&s=460",
+		"about": "",
+		"email": "",
+		"tagline": "Site creator",
+		"links": [
+			{
+				"title": "Web Site",
+				"url": "https://rdfriedl.github.io",
+				"icon": ""
+			},
+			{
+				"title": "CodePen",
+				"url": "http://codepen.io/rdfriedl/",
+				"icon": "http://codepen.io/favicon.ico"
+			},
+			{
+				"title": "GitHub",
+				"url": "https://github.com/rdfriedl",
+				"icon": "https://github.com/favicon.ico"
+			}
+		]
+	},
+	{
+		"name": "Brainiac98",
+		"profileImage": "https://avatars3.githubusercontent.com/u/6364685?v=3&s=460",
+		"about": "",
+		"email": "",
+		"tagline": "",
+		"links": [
+			{
+				"title": "GitHub",
+				"url": "https://github.com/Brainiac98",
+				"icon": "https://github.com/favicon.ico"
+			}
+		]
+	}
+]

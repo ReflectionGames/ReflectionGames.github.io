@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title bind-text="'Reflection Games - ' + game.title">Reflection Games</title>
+		<title bind-text="'Reflection Games - ' + profile.name">Reflection Games</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
 		<script src="/js/searchGames.js"></script>
 
 		<style type="text/css">
-		#coverImage{
+		#profileImage{
 			display: inline-block;
 			width: 20%;
 			float: left;
@@ -36,28 +36,29 @@
 			padding-left: 20px;
 			float: left;
 		}
-		#screenshots{
-    		display: flex;
-    		flex-wrap: wrap;
+
+		.games,.prototypes{
+		    display: flex;
+		    flex-direction: row;
+		    flex-wrap: wrap;
+		    padding: 0 10px 0 10px;
 		}
-		.screenshot{
-			width: 300px;
-			margin: 0 5px 10px 5px;
-			flex-grow: 1;
-			flex-shrink: 1;
-			max-width: 50%;
+		.game,.prototype{
+		    margin: 5px;
+		    flex-shrink: 0;
+		    width: 300px;
+		    flex-grow: 1;
+		    min-width: 320px;
 		}
-		@media screen and (max-width: 930px) {
-			.screenshot{
-				max-width: 100%;
-			}
-		}
-		.screenshot img{
+		.game .coverImage,.prototype .coverImage{
 			width: 100%;
 		}
-		.blueimp-gallery>.slides>.slide>.slide-content, .blueimp-gallery>.prev, .blueimp-gallery>.next, .blueimp-gallery>.close, .blueimp-gallery>.play-pause{
-			border: 0px !important;
+		@media (min-width: 768px){
+			.game,.prototype{
+				max-width: 50%;
+			}
 		}
+
 		</style>
 
 		<script>
@@ -103,32 +104,33 @@
 						</div><!-- /.navbar-collapse -->
 					</nav>
 
-					<div class="row" bind-if="game">
+					<div class="row" bind-if="profile">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<img id="coverImage" class="hidden-xs" bind-src="game.coverImage">
-							<div class="pull-right" bind-foreach="creators">
-								<a class="btn btn-default" style="display: inline-block;" bind-href="'/profile?member='+name"><img bind-src="profileImage" style="width: 2em;"> <span bind-text="name"></span></a>
+							<img id="profileImage" bind-src="profile.profileImage">
+							<div class="pull-right" bind-foreach="links">
+								<a class="btn btn-default link" bind-href="url"><img style="width: 2em;" bind-src="icon" bind-visible="icon.length"><i class="fa fa-link" bind-visible="icon.length == 0"></i> <span class="hidden-xs hidden-sm" bind-text="title"></span></a>
 							</div>
 							<div id="head">
-								<h2>{game.title}</h2>
-								<p>{game.description}</p>
-								<div class="buttons">
-									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id" bind-visible="game.iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
-								</div>
+								<h2>{profile.name}</h2>
+								<p bind-visible="profile.email">{profile.email}</p>
+								<p bind-visible="profile.tagline">{profile.tagline}</p>
 							</div>
 						</div>
 					</div>
 
-					<div class="row" bind-if="game" style="margin-top: 20px;">
+					<div class="row" bind-if="profile" style="margin-top: 20px;">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div role="tabpanel">
 							    <!-- Nav tabs -->
 							    <ul class="nav nav-tabs" role="tablist">
 							        <li role="presentation" class="active">
-							            <a href="#details" data-toggle="tab"><i class="fa fa-info"></i> Details</a>
+							            <a href="#details" data-toggle="tab"><i class="fa fa-info"></i> About</a>
 							        </li>
-							        <li role="presentation" bind-visible="downloads.length > 0">
-							            <a href="#download" data-toggle="tab"><i class="fa fa-download"></i> Download</a>
+							        <li role="presentation">
+							            <a href="#games" data-toggle="tab" bind-visible="games.length"><i class="fa fa-gamepad"></i> Games</a>
+							        </li>
+							        <li role="presentation">
+							            <a href="#prototypes" data-toggle="tab" bind-visible="prototypes.length"><i class="fa fa-flask"></i> Prototypes</a>
 							        </li>
 							        <li role="presentation">
 							            <a href="#share" data-toggle="tab"><i class="fa fa-share-alt"></i> Share</a>
@@ -138,19 +140,13 @@
 							    <!-- Tab panes -->
 							    <div class="tab-content">
 							        <div role="tabpanel" class="tab-pane active" id="details">
-							        	<!-- screen shots -->
-							        	<div class="row" style="margin-top: 20px;">
-											<div id="screenshots" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-foreach="screenshots">
-												<a class="screenshot" bind-href="src" data-gallery><img bind-src="src"></a>
-											</div>
-							        	</div>
-							        	<!-- description -->
-										<div class="row" bind-visible="game.longDescription.length > 0">
+							        	<!-- about -->
+										<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 												<div class="page-header">
-												  	<h2>Description</h2>
+												  	<h2>About</h2>
 												</div>
-												  <p>{game.longDescription}</p>
+												<p>{profile.about}</p>
 											</div>
 										</div>
 							        </div>
@@ -167,7 +163,7 @@
 									    </a>
 									    </p>
 									    <p>
-									    <a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" target="_blank" style="background-color:#019AD2; min-width:175px;">
+									    <a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + profile.name + ' on Reflection Games.'" target="_blank" style="background-color:#019AD2; min-width:175px;">
 									      <i class="fa fa-twitter"></i> Share on Twitter
 									    </a>
 									    </p>
@@ -178,14 +174,52 @@
 									    	" style="background-color:#DD4C39; min-width:175px;"><i class="fa fa-google-plus"></i> Share on Google+</a>
 									    </p>
 							        </div>
-							        <div role="tabpanel" class="tab-pane" id="download">
-									    <div bind-foreach="downloads">
-									    	<div class="page-header">
-									    	  	<h3><i bind-attr-class="'fa fa-'+os.id"></i> <b bind-text="os.title"></b> <small bind-text="os.versions.join(', ')"></small></h3>
-									    	</div>
-									    	<p bind-html="description || ''"></p>
-									    	<a class="btn btn-success" bind-href="link" bind-click="$modal.download(os)" target="_blank"><i class="fa fa-download"></i> Download</a>
-									    	<a class="btn btn-primary" bind-href="dirLink" bind-visible="dirLink.length > 0" target="_blank"><i class="fa fa-folder-open"></i> Download Directory</a>
+							        <div role="tabpanel" class="tab-pane" id="games">
+									    <div class="games" bind-foreach="games">
+											
+											<!-- game -->
+											<div class="game panel panel-default">
+												<div class="panel-body">
+													<div class="row">
+														<div class="col-xs-4">
+															<a bind-href="'/game?game='+id"><img class="coverImage" bind-src="coverImage"></a>
+														</div>
+														<div class="col-xs-8">
+															<h3 class="title" style="margin-top: 0px; display: inline-block;" bind-text="title"></h3>
+															<p class="desc" bind-text="description"></p>
+															<p>
+																<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+																<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+									    </div>
+							        </div>
+							        <div role="tabpanel" class="tab-pane" id="prototypes">
+									    <div class="prototypes" bind-foreach="prototypes">
+											
+											<!-- prototype -->
+											<div class="prototype panel panel-default">
+												<div class="panel-body">
+													<div class="row">
+														<div class="col-xs-4">
+															<a bind-href="'/game?game='+id"><img class="coverImage" bind-src="coverImage"></a>
+														</div>
+														<div class="col-xs-8">
+															<h3 class="title" style="margin-top: 0px; display: inline-block;" bind-text="title"></h3>
+															<p class="desc" bind-text="description"></p>
+															<p>
+																<a class="btn btn-success pull-right play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+																<a class="btn btn-info pull-right view-link" bind-href="'/game?game='+id">View</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+									    
 									    </div>
 							        </div>
 							    </div>
@@ -252,61 +286,48 @@
 	<script type="text/javascript">
 
 	page = {
-		search: utils.parseSearch(),
-		game: undefined,
-		creators: [],
-		screenshots: [],
-		downloads: [],
-		download: function(os){
-			ga('send','event','download',os.title,page.game.title);
-		},
+		profile: undefined,
+		links: [],
+		games: [],
+		prototypes: [],
 		shareFacebook: function(){
-			ga('send','event','share','Facebook',page.game.title);
+			ga('send','event','share','Facebook',page.profile.name);
 		},
 		shareTwitter: function(){
-			ga('send','event','share','Twitter',page.game.title);
+			ga('send','event','share','Twitter',page.profile.name);
 		},
 		shareGooglePlus: function(){
-			ga('send','event','share','Google+',page.game.title);
+			ga('send','event','share','Google+',page.profile.name);
 		}
 	}
 
 	bindings.createModal(page);
 	bindings.applyBindings(page,document);
 
-	var loadGame = function(game){
-		if(game){
-			page.game = game;
-			for (var i = 0; i < game.screenShots.length; i++) {
-				page.screenshots.push({src:game.screenShots[i]});
+	utils.loadMember(utils.parseSearch().member,function(data){
+		page.profile = data;
+		page.links = data.links;
+
+		//load games
+		utils.loadGames(function(games){
+			for (var i = 0; i < games.length; i++) {
+				if(games[i].creators.indexOf(page.profile.name) !== -1){
+					page.games.push(games[i]);
+				}
 			};
-			page.downloads = game.downloads;
+		})
 
-			utils.loadMembers(function(data){
-				for (var i = 0; i < data.length; i++) {
-					if(page.game.creators.indexOf(data[i].name) !== -1){
-						page.creators.push(data[i]);
-					}
-				};
-			})
+		//load prototypes
+		utils.loadPrototypes(function(prototypes){
+			for (var i = 0; i < prototypes.length; i++) {
+				if(prototypes[i].creators.indexOf(page.profile.name) !== -1){
+					page.prototypes.push(prototypes[i]);
+				}
+			};
+		})
 
-			//send GA data
-		 	ga('send', 'event', 'view', 'game', game.title);
-		}
-		else{
-			utils.serverError('404','There is no game with that id')
-		}
-	}
-
- 	//load the creators
-	utils.loadGame(page.search.game,function(data){
-		if(!data){
-			utils.loadPrototype(page.search.game,loadGame);
-		}
-		else{
-			loadGame(data);
-		}
-	});
+		ga('send', 'event', 'view', 'profile', data.name);
+	})
 
 	</script>
 </html>

@@ -35,6 +35,9 @@
 			"/res/images/screenshots/games/elvanteen/screenshot2.png",
 			"/res/images/screenshots/games/elvanteen/screenshot3.png",
 			"/res/images/screenshots/games/elvanteen/screenshot4.png"
+		],
+		"creators": [
+			"Rdfriedl"
 		]
 	},
 	{
@@ -55,6 +58,9 @@
 		"screenShots": [
 			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
 			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
+		],
+		"creators": [
+			"Rdfriedl"
 		]
 	}
 ]

@@ -65,6 +65,7 @@
 								<li class="active"><a href="/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
 								<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
+								<li><a href="/members"><i class="fa fa-users"></i> Members</a></li>
 							</ul>
 							<form class="navbar-form navbar-right" role="search" action="/search">
 								<div class="form-group">
@@ -115,8 +116,8 @@
 									<h3 class="panel-title">Members</h3>
 							  	</div>
 								<div class="panel-body">
-									<div class="list-group" bind-foreach="organizationMembers">
-										<a bind-href="html_url" class="list-group-item"><img bind-src="avatar_url" style="width: 2em;"> {login}</a>
+									<div class="list-group" bind-foreach="members">
+										<a bind-href="'/profile?member='+name" class="list-group-item"><img bind-src="profileImage" style="width: 2em;"> {name}</a>
 									</div>
 								</div>
 							</div>
@@ -182,7 +183,7 @@
 
 		page = {
 			games: [],
-			organizationMembers: []
+			members: utils.loadMembers()
 		}
 
 		bindings.createModal(page)
@@ -195,15 +196,6 @@
 			utils.loadPrototypes(function(data){
 				page.games = page.games.concat(data);
 			})
-		})
-
-		$.ajax({
-			url: '//api.github.com/orgs/reflectiongames/members',
-			type: 'get',
-			dataType: 'json'
-		})
-		.done(function(json) {
-			page.organizationMembers = json;
 		})
 	</script>
 </html>

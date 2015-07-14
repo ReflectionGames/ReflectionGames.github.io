@@ -40,7 +40,7 @@ utils = {
 	loadGame: function(id,cb){
 		utils.loadGames(function(games){
 			for (var i = 0; i < games.length; i++) {
-				if(games[i].id === id){
+				if(games[i].id == id){
 					if(cb) cb(games[i]);
 					return;
 				}
@@ -89,8 +89,57 @@ utils = {
 	loadPrototype: function(id,cb){
 		utils.loadPrototypes(function(prototypes){
 			for (var i = 0; i < prototypes.length; i++) {
-				if(prototypes[i].id === id){
+				if(prototypes[i].id == id){
 					if(cb) cb(prototypes[i]);
+					return;
+				}
+			};
+			if(cb) cb(false);
+		})
+	},
+	loadMembers: function(cb){
+		utils.loadMembers.callbacks = utils.loadMembers.callbacks || [];
+			
+		if(!utils.loadMembers.cache){
+			utils.loadMembers.cache = [];
+			$.ajax({
+				url: '/data/members.json',
+				type: 'get',
+				dataType: 'json'
+			})
+			.done(function(json) {
+				utils.loadMembers.returned = true;
+				for (var i = 0; i < json.length; i++) {
+					utils.loadMembers.cache.push(json[i]);
+				};
+				
+				if(cb) cb(json);
+
+				for (var i = 0; i < utils.loadMembers.callbacks.length; i++) {
+					utils.loadMembers.callbacks[i](json);
+				};
+			})
+			.fail(function() {
+				if(cb) cb(false);
+
+				for (var i = 0; i < utils.loadMembers.callbacks.length; i++) {
+					utils.loadMembers.callbacks[i](false);
+				};
+			})
+		}
+		else if(!utils.loadMembers.returned){
+			utils.loadMembers.callbacks.push(cb);
+		}
+		else{
+			if(cb) cb(utils.loadMembers.cache);
+		}
+		return utils.loadMembers.cache;
+	},
+	loadMember: function(name,cb){
+		utils.loadMembers(function(members){
+			for (var i = 0; i < members.length; i++) {
+				if(members[i].name.toLowerCase() == name.toLowerCase()){
+					if(cb) cb(members[i]);
 					return;
 				}
 			};

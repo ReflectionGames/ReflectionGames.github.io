@@ -16,6 +16,9 @@
 		"coverImage": "/res/images/screenshots/prototypes/grid-movement-test/screenshot1.png",
 		"screenShots": [
 			"/res/images/screenshots/prototypes/grid-movement-test/screenshot1.png"
+		],
+		"creators": [
+			"Brainiac98"
 		]
 	},
 	{
@@ -37,6 +40,9 @@
 			"/res/images/screenshots/prototypes/block-script/block-script.png",
 			"/res/images/screenshots/prototypes/block-script/block-script2.png",
 			"/res/images/screenshots/prototypes/block-script/block-script3.png"
+		],
+		"creators": [
+			"Rdfriedl"
 		]
 	}
 ]
