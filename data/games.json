@@ -55,13 +55,55 @@
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png",
+		"coverImage": "https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
 		"screenShots": [
 			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
 			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
 		],
 		"creators": [
 			"Rdfriedl"
+		]
+	},
+	{
+		"id": "platformer1",
+		"visible": true,
+		"title": "Platformer 1 (blue)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "https://github.com/ReflectionGames/platformers",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "This version was exported with GameMaker 8.1, so the sound my sound different",
+				"link": "https://github.com/ReflectionGames/platformers/raw/master/downloads/platformer%201%20(blue).zip",
+				"dirLink": "https://github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot.png",
+		"screenShots": [
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot2.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot3.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot4.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
 		]
 	}
 ]
