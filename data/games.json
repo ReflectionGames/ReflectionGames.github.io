@@ -70,7 +70,7 @@
 		"title": "Platformer 1 (blue)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "https://github.com/ReflectionGames/platformers",
+		"sourceURL": "https://github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%201%20(blue).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -83,7 +83,7 @@
 						"Window 10"
 					]
 				},
-				"description": "This version was exported with GameMaker 8.1, so the sound my sound different",
+				"description": "This version was exported with GameMaker 8.1, so the sound may sound different",
 				"link": "https://github.com/ReflectionGames/platformers/raw/master/downloads/platformer%201%20(blue).zip",
 				"dirLink": "https://github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
@@ -94,13 +94,55 @@
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot.png",
+		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
 		"screenShots": [
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
 			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot2.png",
 			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot3.png",
 			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot4.png",
 			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
+	},
+	{
+		"id": "platformer2",
+		"visible": true,
+		"title": "Platformer 2 (green)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "https://github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%202%20(green).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "This version was exported with GameMaker 8.1, so the sound may sound different",
+				"link": "https://github.com/ReflectionGames/platformers/raw/master/downloads/platformer%202%20(green).zip",
+				"dirLink": "https://github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
+		"screenShots": [
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot2.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot3.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot4.png",
+			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
