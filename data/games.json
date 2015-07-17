@@ -5,7 +5,7 @@
 		"title": "Elvanteen",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "https://github.com/ReflectionGames/Elvanteen",
+		"sourceURL": "//github.com/ReflectionGames/Elvanteen",
 		"downloads": [
 			{
 				"os": {
@@ -19,22 +19,22 @@
 					]
 				},
 				"description": "Remember to extract the <b>.exe</b> file out of the <b>.zip</b> file, other wise saving/loading games might get a little messed up",
-				"link": "https://cdn.rawgit.com/ReflectionGames/Elvanteen/master/download/complete/Elvanteen.zip",
-				"dirLink": "https://github.com/ReflectionGames/Elvanteen/tree/master/download"
+				"link": "//cdn.rawgit.com/ReflectionGames/Elvanteen/master/download/Elvanteen.zip",
+				"dirLink": "//github.com/ReflectionGames/Elvanteen/tree/master/download"
 			}
 		],
-		"iframeURL": "https://rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
+		"iframeURL": "//rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "/res/images/screenshots/games/elvanteen/screenshot3.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot3.png",
 		"screenShots": [
-			"/res/images/screenshots/games/elvanteen/screenshot.png",
-			"/res/images/screenshots/games/elvanteen/screenshot2.png",
-			"/res/images/screenshots/games/elvanteen/screenshot3.png",
-			"/res/images/screenshots/games/elvanteen/screenshot4.png"
+			"//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot4.png"
 		],
 		"creators": [
 			"Rdfriedl",
@@ -47,18 +47,18 @@
 		"title": "Buttons & Doors",
 		"description": "A simple puzzle game",
 		"longDescription": "",
-		"sourceURL": "https://github.com/rdfriedl/buttons-and-doors",
+		"sourceURL": "//github.com/rdfriedl/buttons-and-doors",
 		"downloads": [],
-		"iframeURL": "https://rdfriedl.github.io/buttons-and-doors",
+		"iframeURL": "//rdfriedl.github.io/buttons-and-doors",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
 		"screenShots": [
-			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
-			"https://raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
+			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
+			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
 		],
 		"creators": [
 			"Rdfriedl"
@@ -70,7 +70,7 @@
 		"title": "Platformer 1 (blue)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "https://github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%201%20(blue).gmx",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%201%20(blue).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -83,9 +83,9 @@
 						"Window 10"
 					]
 				},
-				"description": "This version was exported with GameMaker 8.1, so the sound may sound different",
-				"link": "https://github.com/ReflectionGames/platformers/raw/master/downloads/platformer%201%20(blue).zip",
-				"dirLink": "https://github.com/ReflectionGames/platformers/tree/master/downloads"
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%201%20(blue).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
 		"iframeURL": "",
@@ -94,13 +94,13 @@
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
 		"screenShots": [
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot2.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot3.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot4.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot5.png"
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
@@ -112,7 +112,7 @@
 		"title": "Platformer 2 (green)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "https://github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%202%20(green).gmx",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%202%20(green).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -125,9 +125,9 @@
 						"Window 10"
 					]
 				},
-				"description": "This version was exported with GameMaker 8.1, so the sound may sound different",
-				"link": "https://github.com/ReflectionGames/platformers/raw/master/downloads/platformer%202%20(green).zip",
-				"dirLink": "https://github.com/ReflectionGames/platformers/tree/master/downloads"
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%202%20(green).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
 		"iframeURL": "",
@@ -136,13 +136,13 @@
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
 		"screenShots": [
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot2.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot3.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot4.png",
-			"https://raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot5.png"
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
