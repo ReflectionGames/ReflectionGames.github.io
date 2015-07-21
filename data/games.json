@@ -42,29 +42,6 @@
 		]
 	},
 	{
-		"id": "buttons-and-doors",
-		"visible": true,
-		"title": "Buttons & Doors",
-		"description": "A simple puzzle game",
-		"longDescription": "",
-		"sourceURL": "//github.com/rdfriedl/buttons-and-doors",
-		"downloads": [],
-		"iframeURL": "//rdfriedl.github.io/buttons-and-doors",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
-		"coverImage": "//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
-		"screenShots": [
-			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
-			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
-		],
-		"creators": [
-			"Rdfriedl"
-		]
-	},
-	{
 		"id": "platformer1",
 		"visible": true,
 		"title": "Platformer 1 (blue)",
@@ -88,7 +65,7 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "",
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%201%20(blue)/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
@@ -130,7 +107,7 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "",
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%202%20(green)/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",

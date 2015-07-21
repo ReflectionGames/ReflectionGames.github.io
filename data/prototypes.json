@@ -44,5 +44,28 @@
 		"creators": [
 			"Rdfriedl"
 		]
+	},
+	{
+		"id": "buttons-and-doors",
+		"visible": true,
+		"title": "Buttons & Doors",
+		"description": "A simple puzzle game",
+		"longDescription": "",
+		"sourceURL": "//github.com/rdfriedl/buttons-and-doors",
+		"downloads": [],
+		"iframeURL": "//rdfriedl.github.io/buttons-and-doors",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
+			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
+		],
+		"creators": [
+			"Rdfriedl"
+		]
 	}
 ]
