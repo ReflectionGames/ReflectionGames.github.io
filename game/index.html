@@ -184,7 +184,7 @@
 									    	  	<h3><i bind-attr-class="'fa fa-'+os.id"></i> <b bind-text="os.title"></b> <small bind-text="os.versions.join(', ')"></small></h3>
 									    	</div>
 									    	<p bind-html="description || ''"></p>
-									    	<a class="btn btn-success" bind-href="link" bind-click="$modal.download(os)" target="_blank"><i class="fa fa-download"></i> Download</a>
+									    	<a class="btn btn-success" bind-href="link" bind-click="$modal.download(os)" target="_blank" download><i class="fa fa-download"></i> Download</a>
 									    	<a class="btn btn-primary" bind-href="dirLink" bind-visible="dirLink.length > 0" target="_blank"><i class="fa fa-folder-open"></i> Download Directory</a>
 									    </div>
 							        </div>
