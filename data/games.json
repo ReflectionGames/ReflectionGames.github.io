@@ -124,5 +124,47 @@
 		"creators": [
 			"Michael4771"
 		]
+	},
+	{
+		"id": "platformer3",
+		"visible": true,
+		"title": "Platformer 3 (white)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%203%20(white).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%203%20(white).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%203%20(white)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
 	}
 ]
