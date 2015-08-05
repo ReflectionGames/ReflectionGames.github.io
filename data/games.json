@@ -47,7 +47,7 @@
 		"title": "Platformer 1 (blue)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%201%20(blue).gmx",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 1 (blue).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -61,23 +61,23 @@
 					]
 				},
 				"description": "",
-				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%201%20(blue).zip",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 1 (blue).zip",
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%201%20(blue)/index.html",
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 1 (blue)/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot1.png",
 		"screenShots": [
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot1.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot2.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot3.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot4.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%201%20(blue)/screenshot5.png"
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
@@ -89,7 +89,7 @@
 		"title": "Platformer 2 (green)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%202%20(green).gmx",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 2 (green).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -103,23 +103,23 @@
 					]
 				},
 				"description": "",
-				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%202%20(green).zip",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 2 (green).zip",
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%202%20(green)/index.html",
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 2 (green)/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot1.png",
 		"screenShots": [
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot1.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot2.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot3.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot4.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%202%20(green)/screenshot5.png"
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
@@ -131,7 +131,7 @@
 		"title": "Platformer 3 (white)",
 		"description": "",
 		"longDescription": "",
-		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer%203%20(white).gmx",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 3 (white).gmx",
 		"downloads": [
 			{
 				"os": {
@@ -145,23 +145,149 @@
 					]
 				},
 				"description": "",
-				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer%203%20(white).zip",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 3 (white).zip",
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer%203%20(white)/index.html",
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 3 (white)/index.html",
 		"size": {
 			"padding": "20px",
 			"width": "640px",
 			"height": "480px"
 		},
-		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot1.png",
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot1.png",
 		"screenShots": [
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot1.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot2.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot3.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot4.png",
-			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer%203%20(white)/screenshot5.png"
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
+	},
+	{
+		"id": "platformer4",
+		"visible": true,
+		"title": "Platformer 4 (red)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 4 (red).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 4 (red).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 4 (red)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
+	},
+	{
+		"id": "platformer5",
+		"visible": true,
+		"title": "Platformer 5 (lightblue)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 5 (lightblue).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 5 (lightblue).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 5 (lightblue)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
+	},
+	{
+		"id": "platformer6",
+		"visible": true,
+		"title": "Platformer 6 (steel)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 6 (steel).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 6 (steel).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 6 (steel)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot5.png"
 		],
 		"creators": [
 			"Michael4771"
