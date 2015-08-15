@@ -292,5 +292,89 @@
 		"creators": [
 			"Michael4771"
 		]
+	},
+	{
+		"id": "platformer7",
+		"visible": true,
+		"title": "Platformer 7 (CRAZY)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 7 (CRAZY).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 7 (CRAZY).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 7 (CRAZY)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
+	},
+	{
+		"id": "platformer8",
+		"visible": true,
+		"title": "Platformer 8 (sand)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 8 (sand).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 8",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 8 (sand).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 8 (sand)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
 	}
 ]
