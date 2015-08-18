@@ -1,0 +1,5 @@
+.game, .prototype, .member{
+	opacity: 0;
+	transition: transform .2s;
+	transform: translateX(-200%);
+}

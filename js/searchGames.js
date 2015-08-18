@@ -5,13 +5,10 @@ var searchGames = function(games) {
         // an array that will be populated with substring matches
         matches = [];
 
-        // regex used to determine if a string contains the substring `q`
-        substrRegex = new RegExp(q, 'i');
-
         // iterate through the pool of strings and for any string that
         // contains the substring `q`, add it to the `matches` array
         $.each(games, function(i, game) {
-            if (substrRegex.test(game.title)) {
+            if (game.title.indexOf(q) !== -1) {
                 matches.push(game.title);
             }
         });

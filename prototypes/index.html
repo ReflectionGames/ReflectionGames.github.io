@@ -24,8 +24,10 @@
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
+		<script src="/js/animateGames.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
+		<link rel="stylesheet" type="text/css" href="/css/animateGames.css">
 
 		<script>
 		 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -120,7 +122,9 @@
 	$gameImage.remove();
 
 	page = {
-		games: utils.loadPrototypes()
+		games: utils.loadPrototypes(function(data){
+			setTimeout(animateGames,10);
+		})
 	}
 
 	bindings.createModal(page);

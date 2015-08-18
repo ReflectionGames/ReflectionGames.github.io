@@ -23,9 +23,10 @@
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
-		<script src="/js/searchGames.js"></script>
+		<script src="/js/animateGames.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
+		<link rel="stylesheet" type="text/css" href="/css/animateGames.css">
 		<style type="text/css">
 			#members{
 			    display: flex;
@@ -159,7 +160,9 @@
 	})
 
 	page = {
-		members: utils.loadMembers()
+		members: utils.loadMembers(function(data){
+			setTimeout(animateGames,10);
+		})
 	}
 
 	bindings.createModal(page);
