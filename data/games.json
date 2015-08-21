@@ -376,5 +376,47 @@
 		"creators": [
 			"Michael4771"
 		]
+	},
+	{
+		"id": "platformer9",
+		"visible": true,
+		"title": "Platformer 9 (mc)",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/platformers/tree/master/gamemaker/platformer 9 (mc).gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 9",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/platformers/raw/master/downloads/platformer 9 (mc).zip",
+				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 9 (mc)/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "490px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot5.png"
+		],
+		"creators": [
+			"Michael4771"
+		]
 	}
 ]
