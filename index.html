@@ -101,7 +101,7 @@
 						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hidden-xs">
 							<div class="panel panel-default">
 							  	<div class="panel-heading">
-									<h3 class="panel-title">Links</h3>
+									<h3 class="panel-title"><i class="fa fa-link"></i> Links</h3>
 							  	</div>
 								<div class="panel-body">
 									<div class="list-group">
@@ -111,12 +111,35 @@
 							</div>
 							<div class="panel panel-default">
 							  	<div class="panel-heading">
-									<h3 class="panel-title">Members</h3>
+									<h3 class="panel-title"><i class="fa fa-users"></i> Members</h3>
 							  	</div>
 								<div class="panel-body">
 									<div class="list-group" bind-foreach="members">
 										<a bind-href="'/profile?member='+name" class="list-group-item"><img bind-src="profileImage" style="width: 2em;"> {name}</a>
 									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+							  	<div class="panel-heading">
+									<h3 class="panel-title"><i class="fa fa-share-alt"></i> Share</h3>
+							  	</div>
+								<div class="panel-body">
+								    <p><a class="facebook-share-button btn btn-info" href="#" bind-click="$modal.shareFacebook()" onclick="
+								      window.open(
+								      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+								      'facebook-share-dialog', 
+								      'width=626,height=436'); 
+								      return false;" style="background-color:#3B5998;">
+								      <i class="fa fa-facebook"></i> Share on Facebook</a></p>
+								    <p>
+								    	<a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out Reflection Games.'" target="_blank" style="background-color:#019AD2;">
+								    		<i class="fa fa-twitter"></i> Share on Twitter
+								    	</a>
+							    	</p>
+								    <p><a class="googlePlus-share-button btn btn-info" bind-click="$modal.shareGooglePlus()" bind-href="'https://plus.google.com/share?url='+location.href" onclick="
+								    	javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+								    	return false;
+								    	" style="background-color:#DD4C39;"><i class="fa fa-google-plus"></i> Share on Google+</a></p>
 								</div>
 							</div>
 						</div>
@@ -181,7 +204,16 @@
 
 		page = {
 			games: [],
-			members: utils.loadMembers()
+			members: utils.loadMembers(),
+			shareFacebook: function(){
+				ga('send','event','share','Facebook','landingPage');
+			},
+			shareTwitter: function(){
+				ga('send','event','share','Twitter','landingPage');
+			},
+			shareGooglePlus: function(){
+				ga('send','event','share','Google+','landingPage');
+			}
 		}
 
 		bindings.createModal(page)
