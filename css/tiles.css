@@ -13,7 +13,7 @@
     transition: all .2s;
 }
 .tile:hover{
-    background: #485563;
+    /*background: #485563;*/
     cursor: pointer;
     transform: scale(1.05) !important;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 5px;

@@ -25,7 +25,7 @@
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #4e5d6c;
+  background-color: white;
   border: 1px solid transparent;
   font-size: 1.3em;
   cursor: pointer;
@@ -40,12 +40,12 @@
   border-bottom-left-radius: 0;
 }
 .tt-suggestion{
-  color: #ebebeb;
+  color: black;
 }
 .tt-suggestion:hover,
 .tt-suggestion:focus,
 .tt-suggestion.tt-cursor{
   text-decoration: none;
-  color: #ebebeb;
-  background-color: #485563;
+  color: black;
+  background-color: #eeeeee;
 }

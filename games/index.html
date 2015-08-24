@@ -2,9 +2,9 @@
 	<head>
 		<title>Reflection Games - Games</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="shortcut icon" href="/res/images/logo.png">
 
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/superhero/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/theme.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/searchGames.css">
 
@@ -42,37 +42,46 @@
 	<body>
 		<div class="container">
 			<div class="row">
+				<!-- nav -->
 				<div class="col-xs-12">
-					<h1>Reflection Games</h1>
-					<nav class="navbar navbar-default" role="navigation">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
+					<div class="col-sm-2 hidden-xs hidden-sm">
+						<a href="http://reflectiongames.github.io"><img src="/res/images/logo.png" style="width: 100%"></a>
+					</div>
+					<div class="col-sm-12 col-md-10 col-offset-md-2">
+						<h1><a href="http://reflectiongames.github.io" class="site-title"><div style="display:inline-block;"><img src="/res/images/logo.png" class="visible-xs visible-sm" style="height: 1em;"></div>Reflection Games</a></h1>
+						<nav class="navbar navbar-default" role="navigation">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
 
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<ul class="nav navbar-nav">
-								<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-								<li class="active"><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
-								<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
-								<li><a href="/members"><i class="fa fa-users"></i> Members</a></li>
-							</ul>
-							<form class="navbar-form navbar-right" role="search" action="/search">
-								<div class="form-group">
-									<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
-								</div>
-								<button class="btn btn-default" type="submit">Search</button>
-							</form>
-						</div><!-- /.navbar-collapse -->
-					</nav>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse navbar-ex1-collapse">
+								<ul class="nav navbar-nav">
+									<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+									<li class="active"><a href="/games"><i class="fa fa-gamepad"></i> Games</a></li>
+									<li><a href="/prototypes"><i class="fa fa-flask"></i> Prototypes</a></li>
+									<li><a href="/members"><i class="fa fa-users"></i> Members</a></li>
+								</ul>
+								<form class="navbar-form navbar-right" role="search" action="/search">
+									<div class="form-group">
+										<input id="searchGames" type="text" name="search" class="form-control" placeholder="Search Games" autocomplete="off">
+									</div>
+									<button class="btn btn-default" type="submit">Search</button>
+								</form>
+							</div><!-- /.navbar-collapse -->
+						</nav>
+					</div>
+				</div>
+
+				<!-- page -->
+				<div class="col-xs-12">
 					<div id="games" class="row tiles" bind-foreach="games">
-
 						<!-- game -->
 						<div class="game tile panel panel-default" bind-attr-game-id="id">
 							<span class="label label-info pull-right" bind-visible="new Date() - new Date(launchDate) < 2678400000" style="font-size: 1em;">New!</span>
@@ -91,7 +100,6 @@
 								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
