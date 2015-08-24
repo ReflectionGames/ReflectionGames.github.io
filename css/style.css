@@ -32,6 +32,12 @@ body {
 		font-size: 20px;
 	}
 }
+.logo{
+	margin: 5px;
+}
+.logo.small{
+	margin: 0px;
+}
 
 #back-to-top{
 	display: none;
