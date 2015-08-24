@@ -17,6 +17,7 @@
 		"screenShots": [
 			"/res/images/screenshots/prototypes/grid-movement-test/screenshot1.png"
 		],
+		"launchDate": "2015/1/1",
 		"creators": [
 			"Brainiac98"
 		]
@@ -41,6 +42,7 @@
 			"/res/images/screenshots/prototypes/block-script/block-script2.png",
 			"/res/images/screenshots/prototypes/block-script/block-script3.png"
 		],
+		"launchDate": "2015/1/1",
 		"creators": [
 			"Rdfriedl"
 		]
@@ -64,6 +66,7 @@
 			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot1.png",
 			"//raw.githubusercontent.com/rdfriedl/buttons-and-doors/gh-pages/screenshots/screenshot2.png"
 		],
+		"launchDate": "2015/1/1",
 		"creators": [
 			"Rdfriedl"
 		]

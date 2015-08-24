@@ -1,25 +1,32 @@
-#games, #prototypes{
+.tiles{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 10px 0 10px;
 }
-.game, .prototype{
+.tile{
     margin: 5px;
     flex-shrink: 0;
     width: 300px;
     flex-grow: 1;
     min-width: 320px;
+    transition: all .2s;
 }
-.game:hover, .prototype:hover{
+.tile:hover{
     background: #485563;
     cursor: pointer;
+    transform: scale(1.05) !important;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 5px;
+    z-index: 100;
 }
-.game .coverImage, .prototype .coverImage{
+.tile .panel-body{
+    padding: 10px;
+}
+.tile .coverImage{
     width: 100%;
 }
 @media (min-width: 768px){
-	.game, .prototype{
-		max-width: 50%;
-	}
+    .tile{
+        max-width: 50%;
+    }
 }

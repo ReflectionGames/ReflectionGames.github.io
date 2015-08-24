@@ -23,38 +23,14 @@
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
-		<script src="/js/animateGames.js"></script>
+		<script src="/js/animateTiles.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
-		<link rel="stylesheet" type="text/css" href="/css/animateGames.css">
+		<link rel="stylesheet" type="text/css" href="/css/tiles.css">
+		<link rel="stylesheet" type="text/css" href="/css/animateTiles.css">
 		<style type="text/css">
-			#members{
-			    display: flex;
-			    flex-direction: row;
-			    flex-wrap: wrap;
-			    padding: 0 10px 0 10px;
-			}
-			.member{
-			    margin: 5px;
-			    flex-shrink: 0;
-			    width: 300px;
-			    flex-grow: 1;
-			    min-width: 320px;
-			}
-			.member:hover{
-				background: #485563;
-			}
-			.member .coverImage{
-				width: 100%;
-			}
 			.member a *{
 				text-decoration: none;
 				color: white;
-			}
-			@media (min-width: 768px){
-				.member{
-					max-width: 50%;
-				}
 			}
 		</style>
 
@@ -100,9 +76,9 @@
 							</form>
 						</div><!-- /.navbar-collapse -->
 					</nav>
-					<div id="members" class="row" bind-foreach="members">
+					<div id="members" class="row tiles" bind-foreach="members">
 
-						<div class="member panel panel-default">
+						<div class="member tile panel panel-default">
 							<div class="panel-body">
 								<a bind-href="'/profile?member='+name">
 									<div class="row">
@@ -186,7 +162,7 @@
 					}
 				}
 			})
-			setTimeout(animateGames,10);
+			setTimeout(animateTiles,10);
 		})
 	}
 

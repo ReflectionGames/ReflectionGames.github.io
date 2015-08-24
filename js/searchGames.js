@@ -8,7 +8,7 @@ var searchGames = function(games) {
         // iterate through the pool of strings and for any string that
         // contains the substring `q`, add it to the `matches` array
         $.each(games, function(i, game) {
-            if (game.title.indexOf(q) !== -1) {
+            if (game.title.toLowerCase().indexOf(q.toLowerCase()) !== -1) {
                 matches.push(game.title);
             }
         });

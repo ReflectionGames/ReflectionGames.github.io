@@ -25,10 +25,10 @@
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/searchGames.js"></script>
-		<script src="/js/animateGames.js"></script>
+		<script src="/js/animateTiles.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="/css/gameDisplay.css">
-		<link rel="stylesheet" type="text/css" href="/css/animateGames.css">
+		<link rel="stylesheet" type="text/css" href="/css/tiles.css">
+		<link rel="stylesheet" type="text/css" href="/css/animateTiles.css">
 
 		<script>
 		 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -73,10 +73,11 @@
 						</div><!-- /.navbar-collapse -->
 					</nav>
 
-					<div id="games" class="row" bind-foreach="searchGames">
+					<div id="games" class="row tiles" bind-foreach="searchGames">
 
 						<!-- game -->
-						<div class="game panel panel-default" bind-attr-game-id="id">
+						<div class="game tile panel panel-default" bind-attr-game-id="id">
+							<span class="label label-info pull-right" bind-visible="new Date() - new Date(launchDate) < 2678400000" style="font-size: 1em;">New!</span>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-xs-4">
@@ -150,7 +151,7 @@
 					};
 				};
 			});
-			setTimeout(animateGames,10);
+			setTimeout(animateTiles,10);
 		})
 	})
 
