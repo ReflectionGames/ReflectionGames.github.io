@@ -6,7 +6,7 @@ body {
 	margin-bottom: 80px;
 }
 
-*{
+*:not(i){
 	font-family: cursive;
 }
 .site-title{
