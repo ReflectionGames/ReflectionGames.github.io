@@ -119,6 +119,7 @@
 											<h3 class="title" style="margin-top: 0px; display: inline-block;">{name}</h3>
 											<p class="desc" bind-visible="email">{email}</p>
 											<p class="desc" bind-visible="tagline">{tagline}</p>
+											<p class="desc">games: <span bind-text="NumberOfGames"></span> prototypes: <span bind-text="NumberOfPrototypes"></span></p>
 										</div>
 									</div>
 								</a>
@@ -160,7 +161,31 @@
 	})
 
 	page = {
-		members: utils.loadMembers(function(data){
+		members: utils.loadMembers(function(members){
+			for(var i = 0; i < members.length; i++){
+				members[i].NumberOfGames = 0;
+				members[i].NumberOfPrototypes = 0;
+			}
+
+			//load games and prototypes after members
+			utils.loadGames(function(games){
+				for(var i = 0; i < members.length; i++){
+					for(var k = 0; k < games.length; k++){
+						if(games[k].creators.indexOf(members[i].name) !== -1){
+							members[i].NumberOfGames++;
+						}
+					}
+				}
+			})
+			utils.loadPrototypes(function(prototypes){
+				for(var j = 0; j < members.length; j++){
+					for(var m = 0; m < prototypes.length; m++){
+						if(prototypes[m].creators.indexOf(members[j].name) !== -1){
+							members[j].NumberOfPrototypes++;
+						}
+					}
+				}
+			})
 			setTimeout(animateGames,10);
 		})
 	}
