@@ -6,7 +6,7 @@
 	  	<link rel="shortcut icon" href="/res/logo.svg">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/searchGames.css">
 
@@ -81,10 +81,10 @@
 			<div class="row">
 				<!-- nav -->
 				<div class="col-xs-12">
-					<div class="col-sm-2 hidden-xs hidden-sm">
+					<div id="title-logo" class="col-sm-2 hidden-xs hidden-sm">
 						<a href="http://reflectiongames.github.io"><img src="/res/logo.svg" class="logo" style="width: 100%"></a>
 					</div>
-					<div class="col-sm-12 col-md-10 col-offset-md-2">
+					<div id="title-nav" class="col-sm-12 col-md-10 col-offset-md-2">
 						<h1><a href="http://reflectiongames.github.io" class="site-title"><div style="display:inline-block;"><img src="/res/logo.svg" class="visible-xs visible-sm logo small" style="height: 1em;"></div>Reflection Games</a></h1>
 						<nav class="navbar navbar-default" role="navigation">
 							<!-- Brand and toggle get grouped for better mobile display -->
@@ -157,16 +157,16 @@
 									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
 									      'facebook-share-dialog', 
 									      'width=626,height=436'); 
-									      return false;" style="background-color:#3B5998;">
+									      return false;" style="background:#3B5998;">
 									      <i class="fa fa-facebook"></i> Facebook
 									    </a>
-									    <a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" target="_blank" style="background-color:#019AD2;">
+									    <a class="twitter-share-button btn btn-info" bind-click="$modal.shareTwitter()" bind-href="'https://twitter.com/share?original_referer=' + location.href + '&amp;text=Check out ' + game.title + ' on Reflection Games.'" target="_blank" style="background:#019AD2;">
 									      <i class="fa fa-twitter"></i> Twitter
 									    </a>
 									    <a class="googlePlus-share-button btn btn-info" bind-click="$modal.shareGooglePlus()" bind-href="'https://plus.google.com/share?url='+location.href" onclick="
 									    	javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 									    	return false;
-									    	" style="background-color:#DD4C39;"><i class="fa fa-google-plus"></i> Google+</a>
+									    	" style="background:#DD4C39;"><i class="fa fa-google-plus"></i> Google+</a>
 									</div>
 								  	<h2>Screenshots</h2>
 								</div>

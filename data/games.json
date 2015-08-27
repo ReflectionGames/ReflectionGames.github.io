@@ -1,5 +1,50 @@
 [
 	{
+		"id": "tankwarz2",
+		"visible": true,
+		"title": "Tank WarZ 2",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/tankwarz2/tree/master/gamemaker/Tank WarZ 2.gmx",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 9",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "//github.com/ReflectionGames/tankwarz2/raw/master/downloads/Tank WarZ 2.zip",
+				"dirLink": "//github.com/ReflectionGames/tankwarz2/tree/master/downloads"
+			}
+		],
+		"iframeURL": "//rawgit.com/ReflectionGames/tankwarz2/master/html/index.html",
+		"size": {
+			"padding": "20px",
+			"width": "640px",
+			"height": "480px"
+		},
+		"coverImage": "//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot1.png",
+		"screenShots": [
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot1.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot2.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot3.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot4.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot5.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot6.png",
+			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot7.png"
+		],
+		"launchDate": "2015/8/27",
+		"creators": [
+			"Brainiac98"
+		]
+	},
+	{
 		"id": "tankwarz",
 		"visible": true,
 		"title": "Tank WarZ",
@@ -27,7 +72,7 @@
 		"size": {
 			"padding": "20px",
 			"width": "640px",
-			"height": "490px"
+			"height": "480px"
 		},
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/tankwarz/master/screenshots/screenshot1.png",
 		"screenShots": [
@@ -113,7 +158,7 @@
 		"size": {
 			"padding": "20px",
 			"width": "640px",
-			"height": "490px"
+			"height": "480px"
 		},
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot1.png",
 		"screenShots": [

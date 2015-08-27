@@ -39,6 +39,13 @@ body {
 	margin: 0px;
 }
 
+#title-logo{
+	width: 12%;
+}
+#title-nav{
+	width: 88%;
+}
+
 #back-to-top{
 	display: none;
     font-size: 2em;
