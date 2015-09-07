@@ -51,6 +51,22 @@
 			    top: 50px;
 			    z-index: 0;
 			}
+			#loading: {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+			}
+			#loading>.text{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			#loading *{
+				text-align: center;
+			}
 		</style>
 
 		<script>
@@ -93,6 +109,12 @@
 			</div><!-- /.navbar-collapse -->
 		</nav>
 
+		<div id="loading">
+			<div class="text">
+				<span style="font-size: 2em;"><i class="fa fa-circle-o-notch fa-spin"></i> Loading Please wait</span><br>
+				<small>this may take up to 10 minuets depending on the size of the game</small>
+			</div>
+		</div>
 		<div id="game-container">
 			<iframe id="game" seamless scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"></iframe>
 		</div>
@@ -100,14 +122,15 @@
 
 	<script type="text/javascript">
 
-	function loadGame(data){
+	function playGame(data,webPlayer){
+		console.log('starting webPlayer: '+webPlayer.id);
 		$('#game').attr({
-			src: data.iframeURL
+			src: webPlayer.iframeURL
 		}).css({
-			'max-width': data.size.width,
-			'max-height': data.size.height
-		})
-		$('#game-container').css('padding',data.size.padding)
+			'max-width': webPlayer.size.width,
+			'max-height': webPlayer.size.height
+		});
+		$('#game-container').css('padding',webPlayer.size.padding)
 		$('#game').css('display','block');
 		$('#game').get(0).focus();
 
@@ -115,11 +138,37 @@
 	 	ga('send', 'event', 'play', 'game', data.title);
 	}
 
+	function loadGame(data){
+		//get the webPlayer
+		var webPlayerID = utils.parseSearch().webPlayer;
+		var webPlayer;
+
+		if(webPlayerID){
+			//find webPlayer with this id
+			for(var i in data.webPlayers){
+				if(data.webPlayers[i].id == webPlayerID){
+					webPlayer = data.webPlayers[i];
+					break;
+				}
+			}
+		}
+		else{
+			//defult to 0
+			webPlayer = data.webPlayers && data.webPlayers[0];
+		}
+
+		if(!webPlayer){
+			utils.serverError('404','That game dose not have a webPlayer with a ID of: '+webPlayerID);
+		}
+
+		playGame(data,webPlayer);
+	}
+
 	var id = utils.parseSearch(location.search).game;
 	if(id){
 		var func = function(data){
 			if(data){
-				if(data.iframeURL.length){
+				if(data.webPlayers && data.webPlayers.length > 0){
 					loadGame(data);
 				}
 				else{

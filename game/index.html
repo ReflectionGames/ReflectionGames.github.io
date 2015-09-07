@@ -39,7 +39,7 @@
 				padding-left: 20px;
 				float: left;
 			}
-			#screenshots{
+			.screenshots{
 	    		display: flex;
 	    		flex-wrap: wrap;
 			}
@@ -122,7 +122,7 @@
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="page-header visible-xs">
 								<div class="buttons pull-right">
-									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id" bind-visible="game.iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id" bind-visible="game.webPlayers.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 								
 									<!-- mobile creators -->
 									<div class="pull-right" bind-foreach="creators">
@@ -139,7 +139,29 @@
 								<h2 class="hidden-xs">{game.title}</h2>
 								<p>{game.description}</p>
 								<div class="buttons hidden-xs">
-									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id" bind-visible="game.iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+									<!-- play buttons -->
+									<div class="btn-group" bind-visible="game.webPlayers.length > 0">
+									  	<a bind-href="'/play?game='+game.id" class="btn btn-success"><i class="fa fa-gamepad"></i> Play</a>
+									  	<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" bind-visible="webPlayers.length > 1">
+									  	  	<span class="caret"></span>
+									  	  	<span class="sr-only">Toggle Dropdown</span>
+									  	</button>
+									  	<ul class="dropdown-menu" bind-foreach="webPlayers" bind-visible="webPlayers.length > 1">
+									  	  	<li><a bind-href="'/play?game='+$modal.game.id+'&webPlayer='+id"><span bind-text="title"></span></a></li>
+									  	</ul>
+									</div>
+
+									<!-- download buttons -->
+								  	<div class="btn-group" bind-visible="downloads.length > 0">
+									  	<a href="#downloads" class="btn btn-info"><i class="fa fa-download"></i> Download</a>
+									  	<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+									  	  	<span class="caret"></span>
+									  	  	<span class="sr-only">Toggle Dropdown</span>
+									  	</button>
+									  	<ul class="dropdown-menu" bind-foreach="downloads">
+									  	  	<li><a bind-href="'#download-'+os.id"><i bind-attr-class="'fa fa-'+os.id"></i> <span bind-text="os.title"></span></a></li>
+									  	</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -148,7 +170,7 @@
 					<div bind-if="game">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				        	<!-- screen shots -->
-				        	<div style="margin-top: 20px;">
+				        	<divstyle="margin-top: 20px;">
 								<div class="page-header">
 									<!-- share -->
 									<div class="pull-right">
@@ -168,9 +190,9 @@
 									    	return false;
 									    	" style="background:#DD4C39;"><i class="fa fa-google-plus"></i> Google+</a>
 									</div>
-								  	<h2>Screenshots</h2>
+								  	<h2><a id="screenshots" href="#screenshots"></a>Screenshots</h2>
 								</div>
-								<div id="screenshots" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-foreach="screenshots">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 screenshots" bind-foreach="screenshots">
 									<a class="screenshot" bind-href="src" data-gallery><img bind-src="src"></a>
 								</div>
 				        	</div>
@@ -178,7 +200,7 @@
 				        	<!-- description -->
 							<div bind-visible="game.longDescription.length > 0">
 								<div class="page-header" stlye="margin-bottom: 0px;">
-								  	<h2>Description</h2>
+								  	<h2><a id="about" href="#about"></a>Description</h2>
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<p>{game.longDescription}</p>
@@ -188,12 +210,17 @@
 							<!-- downloads -->
 							<div bind-visible="game.downloads.length">
 								<div class="page-header">
-								  	<h2>Downloads</h2>
+								  	<h2><a id="downloads" href="#downloads"></a>Downloads</h2>
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								    <div bind-foreach="downloads">
 								    	<div class="page-header">
-								    	  	<h3><i bind-attr-class="'fa fa-'+os.id"></i> <b bind-text="os.title"></b> <small bind-text="os.versions.join(', ')"></small></h3>
+								    	  	<h3>
+								    	  		<a bind-attr-id="'download-'+os.id" bind-href="'#download-'+os.id"></a>
+								    	  		<i bind-attr-class="'fa fa-'+os.id"></i> 
+								    	  		<b bind-text="os.title"></b> 
+								    	  		<small bind-text="os.versions.join(', ')"></small>
+								    	  	</h3>
 								    	</div>
 								    	<p bind-html="description || ''"></p>
 								    	<a class="btn btn-success" bind-href="link" bind-click="$modal.download(os)" target="_blank" download><i class="fa fa-download"></i> Download</a>
@@ -205,9 +232,9 @@
 					</div>
 
 					<!-- other games -->
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-visible="otherGames.length"
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-visible="otherGames.length">
 						<div class="page-header">
-						  	<h2>Other Games <small>by 
+						  	<h2><a id="othergames" href="#othergames"></a>Other Games <small>by 
 						  		<span bind-foreach="creators">
 						  			<a bind-text="name" bind-href="'/profile?member='+name"></a>
 						  		</span>
@@ -226,7 +253,7 @@
 											<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
 											<p class="desc">{description}</p>
 											<div class="buttons pull-right">
-												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="webPlayers.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 											</div>
 										</div>
 									</div>
@@ -299,6 +326,7 @@
 			creators: [],
 			screenshots: [],
 			downloads: [],
+			webPlayers: [],
 			download: function(os){
 				ga('send','event','download',os.title,page.game.title);
 			},
@@ -322,7 +350,12 @@
 				for (var i = 0; i < game.screenShots.length; i++) {
 					page.screenshots.push({src:game.screenShots[i]});
 				};
-				page.downloads = game.downloads;
+				for (var i = 0; i < game.downloads.length; i++) {
+					page.downloads.push(game.downloads[i]);
+				};
+				for (var i = 0; i < game.webPlayers.length; i++) {
+					page.webPlayers.push(game.webPlayers[i]);
+				};
 
 				utils.loadMembers(function(data){
 					for (var i = 0; i < data.length; i++) {

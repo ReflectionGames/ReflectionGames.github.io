@@ -1,5 +1,107 @@
 [
 	{
+		"id": "carGame",
+		"visible": true,
+		"title": "Car Game",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "//github.com/ReflectionGames/carGame/tree/master/unityProjecta",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "Windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 9",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/downloads/windows.zip",
+				"dirLink": "//www.dropbox.com/sh/4rhahi91k621u3r/AAAiW7t6p5NmWBptpCs5zRIGa?dl=0"
+			},
+			{
+				"os": {
+					"id": "apple",
+					"title": "Mac",
+					"versions": [
+						"OS X 10.7",
+						"OS X 10.8",
+						"OS X 10.9",
+						"OS X 10.10",
+						"OS X 10.11"
+					]
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/downloads/mac.zip",
+				"dirLink": "//www.dropbox.com/sh/4rhahi91k621u3r/AAAiW7t6p5NmWBptpCs5zRIGa?dl=0"
+			},
+			{
+				"os": {
+					"id": "linux",
+					"title": "Linux",
+					"versions": []
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/downloads/linux.zip",
+				"dirLink": "//www.dropbox.com/sh/4rhahi91k621u3r/AAAiW7t6p5NmWBptpCs5zRIGa?dl=0"
+			}
+		],
+		"webPlayers": [
+			{
+				"id": "unity",
+				"title": "Unity WebPlayer",
+				"iframeURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/UnityWebPlayer/UnityWebPlayer.html",
+				"size": {
+					"padding": 0,
+					"width": "100%",
+					"height": "100%"
+				}
+			},
+			{
+				"id": "webgl-sd",
+				"title": "WebGL Fast",
+				"iframeURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/WebGL-SD/index.html",
+				"size": {
+					"padding": 0,
+					"width": "100%",
+					"height": "100%"
+				}
+			},
+			{
+				"id": "webgl-hd",
+				"title": "WebGL HD",
+				"iframeURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/webplayers/WebGL-HD/index.html",
+				"size": {
+					"padding": 0,
+					"width": "100%",
+					"height": "100%"
+				}
+			}
+		],
+		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png",
+		"screenShots": [
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot1.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot2.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot3.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot4.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot5.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot6.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot7.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot8.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot9.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot10.png",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/cargame/screenshots/screenshot11.png"
+		],
+		"launchDate": "2015/9/4",
+		"creators": [
+			"Rdfriedl",
+			"Brainiac98"
+		]
+	},
+	{
 		"id": "tankwarz2",
 		"visible": true,
 		"title": "Tank WarZ 2",
@@ -23,12 +125,18 @@
 				"dirLink": "//github.com/ReflectionGames/tankwarz2/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/tankwarz2/master/html/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/tankwarz2/master/html/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/tankwarz2/master/screenshots/screenshot1.png",
@@ -41,7 +149,8 @@
 		],
 		"launchDate": "2015/8/27",
 		"creators": [
-			"Brainiac98"
+			"Brainiac98",
+			"Michael4771"
 		]
 	},
 	{
@@ -68,12 +177,18 @@
 				"dirLink": "//github.com/ReflectionGames/tankwarz/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/tankwarz/master/html/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/tankwarz/master/html/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/tankwarz/master/screenshots/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/tankwarz/master/screenshots/screenshot1.png",
@@ -111,12 +226,18 @@
 				"dirLink": "//github.com/ReflectionGames/Elvanteen/tree/master/download"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/Elvanteen/master/html/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot3.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/Elvanteen/master/screenshots/screenshot1.png",
@@ -154,12 +275,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 9 (mc)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 9 (mc)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 9 (mc)/screenshot1.png",
@@ -199,12 +326,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 8 (sand)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 8 (sand)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 8 (sand)/screenshot1.png",
@@ -242,12 +375,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 7 (CRAZY)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 7 (CRAZY)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 7 (CRAZY)/screenshot1.png",
@@ -285,12 +424,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 6 (steel)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 6 (steel)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 6 (steel)/screenshot1.png",
@@ -328,12 +473,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 5 (lightblue)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 5 (lightblue)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 5 (lightblue)/screenshot1.png",
@@ -371,12 +522,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 4 (red)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 4 (red)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 4 (red)/screenshot1.png",
@@ -414,12 +571,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 3 (white)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 3 (white)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 3 (white)/screenshot1.png",
@@ -457,12 +620,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 2 (green)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 2 (green)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 2 (green)/screenshot1.png",
@@ -500,12 +669,18 @@
 				"dirLink": "//github.com/ReflectionGames/platformers/tree/master/downloads"
 			}
 		],
-		"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 1 (blue)/index.html",
-		"size": {
-			"padding": "20px",
-			"width": "640px",
-			"height": "480px"
-		},
+		"webPlayers": [
+			{
+				"id": "html",
+				"title": "HTML5",
+				"iframeURL": "//rawgit.com/ReflectionGames/platformers/master/html/platformer 1 (blue)/index.html",
+				"size": {
+					"padding": "20px",
+					"width": "640px",
+					"height": "480px"
+				}
+			}
+		],
 		"coverImage": "//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot1.png",
 		"screenShots": [
 			"//raw.githubusercontent.com/ReflectionGames/platformers/master/screenshots/platformer 1 (blue)/screenshot1.png",

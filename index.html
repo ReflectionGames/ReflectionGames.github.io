@@ -100,7 +100,7 @@
 											<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
 											<p class="desc">{description}</p>
 											<div class="buttons pull-right">
-												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="webPlayers.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 											</div>
 										</div>
 									</div>
@@ -123,7 +123,7 @@
 											<h3 class="title" style="margin-top: 0px; display: inline-block;">{title}</h3>
 											<p class="desc">{description}</p>
 											<div class="buttons pull-right">
-												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="iframeURL.length > 0"><i class="fa fa-gamepad"></i> Play</a>
+												<a class="btn btn-success play-link" bind-href="'/play?game='+id" bind-visible="webPlayers.length > 0"><i class="fa fa-gamepad"></i> Play</a>
 											</div>
 										</div>
 									</div>
@@ -252,7 +252,7 @@
 		bindings.createModal(page)
 		bindings.applyBindings(page);
 
-		$(document).on('click','.game',function(){
+		$(document).on('click','.game, .prototype',function(){
 			window.open('/game?game='+$(this).attr('game-id'),'_self');
 		})
 
