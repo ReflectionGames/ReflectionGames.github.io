@@ -169,9 +169,9 @@
 
 					<div bind-if="game">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				        	<!-- screen shots -->
-				        	<divstyle="margin-top: 20px;">
-								<div class="page-header">
+				        	<!-- description -->
+							<div bind-visible="game.longDescription.length > 0">
+								<div class="page-header" stlye="margin-bottom: 0px;">
 									<!-- share -->
 									<div class="pull-right">
 									    <a class="facebook-share-button btn btn-info" href="#" bind-click="$modal.shareFacebook()" onclick="
@@ -190,22 +190,22 @@
 									    	return false;
 									    	" style="background:#DD4C39;"><i class="fa fa-google-plus"></i> Google+</a>
 									</div>
+								  	<h2><a id="about" href="#about"></a>Description</h2>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<p bind-text="game.longDescription"></p>
+								</div>
+							</div>
+
+				        	<!-- screen shots -->
+				        	<divstyle="margin-top: 20px;">
+								<div class="page-header">
 								  	<h2><a id="screenshots" href="#screenshots"></a>Screenshots</h2>
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 screenshots" bind-foreach="screenshots">
 									<a class="screenshot" bind-href="src" data-gallery><img bind-src="src"></a>
 								</div>
 				        	</div>
-
-				        	<!-- description -->
-							<div bind-visible="game.longDescription.length > 0">
-								<div class="page-header" stlye="margin-bottom: 0px;">
-								  	<h2><a id="about" href="#about"></a>Description</h2>
-								</div>
-								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-									<p>{game.longDescription}</p>
-								</div>
-							</div>
 
 							<!-- downloads -->
 							<div bind-visible="game.downloads.length">
