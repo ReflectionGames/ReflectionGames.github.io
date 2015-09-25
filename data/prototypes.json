@@ -1,5 +1,89 @@
 [
 	{
+		"id": "skeletonblaster",
+		"visible": true,
+		"title": "Skeleton Blaster",
+		"description": "",
+		"longDescription": "",
+		"sourceURL": "",
+		"downloads": [
+			{
+				"os": {
+					"id": "windows",
+					"title": "Windows",
+					"versions": [
+						"Windows xp",
+						"Window 7",
+						"Window 9",
+						"Window 10"
+					]
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/downloads/windows.zip",
+				"dirLink": "https://www.dropbox.com/sh/za0vs652jch3ljo/AACgfRSUxwdHPPHQWHg47C5ua?dl=0"
+			},
+			{
+				"os": {
+					"id": "apple",
+					"title": "Mac",
+					"versions": [
+						"OS X 10.7",
+						"OS X 10.8",
+						"OS X 10.9",
+						"OS X 10.10",
+						"OS X 10.11"
+					]
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/downloads/mac.zip",
+				"dirLink": "https://www.dropbox.com/sh/za0vs652jch3ljo/AACgfRSUxwdHPPHQWHg47C5ua?dl=0"
+			},
+			{
+				"os": {
+					"id": "linux",
+					"title": "Linux",
+					"versions": []
+				},
+				"description": "",
+				"link": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/downloads/linux.zip",
+				"dirLink": "https://www.dropbox.com/sh/za0vs652jch3ljo/AACgfRSUxwdHPPHQWHg47C5ua?dl=0"
+			}
+		],
+		"webPlayers": [
+			{
+				"id": "unity",
+				"title": "Unity WebPlayer",
+				"iframeURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/webplayer/webplayer.html",
+				"size": {
+					"padding": 0,
+					"width": "100%",
+					"height": "100%"
+				}
+			},
+			{
+				"id": "webgl",
+				"title": "WebGL",
+				"iframeURL": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/webgl/index.html",
+				"size": {
+					"padding": 0,
+					"width": "100%",
+					"height": "100%"
+				}
+			}
+		],
+		"coverImage": "https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot1.bmp",
+		"screenShots": [
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot1.bmp",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot2.bmp",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot3.bmp",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot4.bmp",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot5.bmp",
+			"https://dl.dropboxusercontent.com/spa/ihqn7sv44ik7per/skeletonblaster/screenshots/screenshot6.bmp"
+		],
+		"launchDate": "2015/9/25",
+		"creators": []
+	},
+	{
 		"id": "grid-movement-test",
 		"visible": true,
 		"title": "grid movement test",
