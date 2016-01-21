@@ -4,6 +4,14 @@
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  	<link rel="shortcut icon" href="/res/logo.svg">
 
+	  	<!-- pre-* -->
+    	<link rel="prefetch" href="/data/games.json"/>
+    	<link rel="prefetch" href="/data/prototypes.json"/>
+    	<link rel="prefetch" href="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"/>
+    	<link rel="prefetch" href="/games"/>
+    	<link rel="prefetch" href="/"/>
+    	<link rel="prefetch" href="/members"/>
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -19,7 +27,7 @@
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
-	
+
 		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"></script>
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
@@ -79,7 +87,7 @@
 						</nav>
 					</div>
 				</div>
-				
+
 				<!-- page -->
 				<div class="col-xs-12">
 					<div id="prototypes" class="row tiles" bind-foreach="prototypes">
@@ -105,7 +113,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<button id="back-to-top" class="btn btn-default"><i class="fa fa-chevron-up"></i></button>
 		<script type="text/javascript">
 			$('#back-to-top').click(function(){

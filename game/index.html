@@ -4,7 +4,15 @@
 		<title bind-text="'Reflection Games - ' + game.title">Reflection Games - Game</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  	<link rel="shortcut icon" href="/res/logo.svg">
-		
+
+	  	<!-- pre-* -->
+    	<link rel="prefetch" href="/data/games.json"/>
+    	<link rel="prefetch" href="/data/prototypes.json"/>
+    	<link rel="prefetch" href="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"/>
+    	<link rel="prefetch" href="/games"/>
+    	<link rel="prefetch" href="/prototypes"/>
+    	<link rel="prefetch" href="/members"/>
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -20,7 +28,7 @@
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
-	
+
 		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"></script>
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
@@ -123,7 +131,7 @@
 							<div class="page-header visible-xs">
 								<div class="buttons pull-right">
 									<a type="button" class="btn btn-success" bind-href="'/play?game='+game.id" bind-visible="game.webPlayers.length > 0"><i class="fa fa-gamepad"></i> Play</a>
-								
+
 									<!-- mobile creators -->
 									<div class="pull-right" bind-foreach="creators">
 										<a class="btn btn-default" style="display: inline-block;" bind-href="'/profile?member='+name"><img bind-src="profileImage" style="width: 2em;"> <span bind-text="name"></span></a>
@@ -176,9 +184,9 @@
 									<div class="pull-right">
 									    <a class="facebook-share-button btn btn-info" href="#" bind-click="$modal.shareFacebook()" onclick="
 									      window.open(
-									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-									      'facebook-share-dialog', 
-									      'width=626,height=436'); 
+									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+									      'facebook-share-dialog',
+									      'width=626,height=436');
 									      return false;" style="background:#3B5998;">
 									      <i class="fa fa-facebook"></i> Facebook
 									    </a>
@@ -217,8 +225,8 @@
 								    	<div class="page-header">
 								    	  	<h3>
 								    	  		<a bind-attr-id="'download-'+os.id" bind-href="'#download-'+os.id"></a>
-								    	  		<i bind-attr-class="'fa fa-'+os.id"></i> 
-								    	  		<b bind-text="os.title"></b> 
+								    	  		<i bind-attr-class="'fa fa-'+os.id"></i>
+								    	  		<b bind-text="os.title"></b>
 								    	  		<small bind-text="os.versions.join(', ')"></small>
 								    	  	</h3>
 								    	</div>
@@ -234,7 +242,7 @@
 					<!-- other games -->
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" bind-visible="otherGames.length">
 						<div class="page-header">
-						  	<h2><a id="othergames" href="#othergames"></a>Other Games <small>by 
+						  	<h2><a id="othergames" href="#othergames"></a>Other Games <small>by
 						  		<span bind-foreach="creators">
 						  			<a bind-text="name" bind-href="'/profile?member='+name"></a>
 						  		</span>
@@ -272,7 +280,7 @@
 				    /* * * CONFIGURATION VARIABLES * * */
 				    var disqus_shortname = 'reflectiongames';
 				    var disqus_category_id = '3969278';
-				    
+
 				    /* * * DON'T EDIT BELOW THIS LINE * * */
 				    (function() {
 				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -389,6 +397,12 @@
 
 				//send GA data
 			 	ga('send', 'event', 'view', 'game', game.title);
+
+			 	//pre-*
+			 	if(game.webPlayers.length > 0){
+			 		$('<link rel="prerender" href="/play?game='+game.id+'"/>').appendTo('head');
+			 		$('<link rel="prefetch" href="'+game.webPlayers[0].iframeURL+'"/>').appendTo('head');
+			 	}
 			}
 			else{
 				utils.serverError('404','There is no game with that id')

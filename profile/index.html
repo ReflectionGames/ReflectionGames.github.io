@@ -4,7 +4,15 @@
 		<title bind-text="'Reflection Games - ' + profile.name">Reflection Games - Profile</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  	<link rel="shortcut icon" href="/res/logo.svg">
-		
+
+	  	<!-- pre-* -->
+    	<link rel="prefetch" href="/data/games.json"/>
+    	<link rel="prefetch" href="/data/prototypes.json"/>
+    	<link rel="prefetch" href="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"/>
+    	<link rel="prefetch" href="/games"/>
+    	<link rel="prefetch" href="/prototypes"/>
+    	<link rel="prefetch" href="/members"/>
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -20,7 +28,7 @@
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
-	
+
 		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"></script>
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
@@ -90,7 +98,7 @@
 						</nav>
 					</div>
 				</div>
-				
+
 				<!-- page -->
 				<div class="col-xs-12">
 					<div class="row" bind-if="profile">
@@ -116,9 +124,9 @@
 									<div class="btn-group pull-right">
 									    <a class="facebook-share-button btn btn-info" href="#" bind-click="$modal.shareFacebook()" onclick="
 									      window.open(
-									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-									      'facebook-share-dialog', 
-									      'width=626,height=436'); 
+									      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+									      'facebook-share-dialog',
+									      'width=626,height=436');
 									      return false;" style="background:#3B5998;">
 									      <i class="fa fa-facebook"></i> Facebook
 									    </a>
@@ -198,7 +206,7 @@
 				    /* * * CONFIGURATION VARIABLES * * */
 				    var disqus_shortname = 'reflectiongames';
 				    var disqus_category_id = '3969296';
-				    
+
 				    /* * * DON'T EDIT BELOW THIS LINE * * */
 				    (function() {
 				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -300,6 +308,10 @@
 			};
 
 			setTimeout(animateTiles,10);
+
+			for(var i in games){
+				$('<link rel="prefetch" href="/game/?game='+games[i].id+'"/>').appendTo('head');
+			}
 		})
 
 		//load prototypes
@@ -311,6 +323,10 @@
 			};
 
 			setTimeout(animateTiles,10);
+
+			for(var i in prototypes){
+				$('<link rel="prefetch" href="/game/?game='+prototypes[i].id+'"/>').appendTo('head');
+			}
 		})
 
 		ga('send', 'event', 'view', 'profile', data.name);

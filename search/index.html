@@ -5,6 +5,15 @@
 	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  	<link rel="shortcut icon" href="/res/logo.svg">
 
+	  	<!-- pre-* -->
+    	<link rel="prefetch" href="/data/games.json"/>
+    	<link rel="prefetch" href="/data/prototypes.json"/>
+    	<link rel="prefetch" href="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"/>
+    	<link rel="prefetch" href="/"/>
+    	<link rel="prefetch" href="/games"/>
+    	<link rel="prefetch" href="/prototypes"/>
+    	<link rel="prefetch" href="/members"/>
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -20,7 +29,7 @@
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
-	
+
 		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"></script>
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
@@ -139,7 +148,7 @@
 
 	utils.loadGames(function(games){
 		page.games = games;
-		
+
 		//load prototypes after games
 		utils.loadPrototypes(function(data){
 			page.games = page.games.concat(data);
@@ -159,6 +168,16 @@
 				};
 			});
 			setTimeout(animateTiles,10);
+
+			//pre-*
+			if(page.searchGames.length > 0){
+				$('<link rel="prerender" href="/game/?game='+page.searchGames[0].id+'"/>').appendTo('head');
+
+				//prefetch the next games
+				for(var i = 1; i < page.searchGames.length; i++){
+					$('<link rel="prefetch" href="/game/?game='+page.searchGames[i].id+'"/>').appendTo('head');
+				}
+			}
 		})
 	})
 
