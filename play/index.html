@@ -20,7 +20,7 @@
 
 		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 		<script src="/js/bootstrap-image-gallery.min.js"></script>
-	
+
 		<script src="//cdn.rawgit.com/rdfriedl/bindings.js/master/dist/bindings-bundle.min.js"></script>
 
 		<script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
@@ -91,7 +91,7 @@
 				</button>
 				<a class="navbar-brand site-title small" href="/"><img src="/res/logo.svg" class="logo small" style="float: left;height: 1em;"> Reflection Games</a>
 			</div>
-		
+
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
@@ -130,6 +130,11 @@
 			'max-width': webPlayer.size.width,
 			'max-height': webPlayer.size.height
 		});
+
+		//min
+		if(webPlayer.size.minWidth) $('#game').css('min-width',webPlayer.size.minWidth);
+		if(webPlayer.size.minHeight) $('#game').css('min-height',webPlayer.size.minHeight);
+
 		$('#game-container').css('padding',webPlayer.size.padding)
 		$('#game').css('display','block');
 		$('#game').get(0).focus();

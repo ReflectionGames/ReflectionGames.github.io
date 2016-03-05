@@ -1,5 +1,33 @@
 [
 	{
+		"id": "circuit",
+		"visible": true,
+		"title": "Circuit",
+		"description": "A Puzzle game where you links to make chains and loops",
+		"longDescription": "A puzzle game made in Game Maker Studio where you must rotate links to make chains and loops",
+		"sourceURL": "https://github.com/Brainiac98/Circuit",
+		"webPlayers": [
+			{
+				"id": "HTML5",
+				"title": "HTML5",
+				"iframeURL": "https://cdn.rawgit.com/Brainiac98/Circuit/master/HTML5/index.html",
+				"size": {
+					"padding": 20,
+					"minWidth": "768px",
+					"minHeight": "768px",
+					"width": "768px",
+					"height": "768px"
+				}
+			}
+		],
+		"coverImage": "//cdn.rawgit.com/Brainiac98/Circuit/master/Screenshots/menu.png",
+		"screenShots": [],
+		"launchDate": "2016/3/4",
+		"creators": [
+			"Brainiac98"
+		]
+	},
+	{
 		"id": "carGame",
 		"visible": true,
 		"title": "Car Game",
